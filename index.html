@@ -1,117 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Design - VYOM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VYOM - City Design Project</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eef2f7;
+      margin: 0;
+      padding: 20px;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #d9bd8b; /* beige */
-        }
+    h1, h2 {
+      color: #1b4965;
+      margin-bottom: 10px;
+    }
 
-        /* NAVIGATION BAR */
-        .navbar {
-            background-color: #142952; /* dark blue */
-            padding: 20px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
 
-        .navbar h1 {
-            margin: 0;
-            font-size: 28px;
-            font-weight: bold;
-        }
+    .box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-        .navbar a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #d9bd8b;
-            font-size: 20px;
-            font-weight: bold;
-        }
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
 
-        /* MAIN CONTENT */
-        .content {
-            padding: 40px 20px;
-            text-align: center;
-            color: #142952;
-        }
+    .team-member {
+      background-color: #cde7f0;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 5px 0;
+      font-weight: bold;
+      color: #034f84;
+    }
 
-        .content h2 {
-            font-size: 32px;
-            font-weight: bold;
-        }
+    .ideas-box {
+      background-color: #fff9e6;
+      border: 2px dashed #f4a261;
+      border-radius: 10px;
+      padding: 10px;
+      min-height: 120px;
+      font-style: italic;
+      color: #6a4c93;
+    }
 
-        .content p {
-            font-size: 20px;
-            line-height: 1.6;
-            max-width: 700px;
-            margin: auto;
-        }
+    img.chart {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      display: block;
+      margin-top: 10px;
+    }
 
-        /* TEAM BOX */
-        .team-box {
-            margin-top: 40px;
-            padding: 20px;
-            background: #142952;
-            color: #d9bd8b;
-            border-radius: 10px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    /* Section colors */
+    #project-name {
+      background-color: #ffd6d6;
+      border: 2px solid #d62828;
+    }
 
-        .team-box h3 {
-            margin: 0;
-            font-size: 24px;
-        }
+    #course-details {
+      background-color: #d0f4de;
+      border: 2px solid #2a9d8f;
+    }
 
-        .team-box ul {
-            list-style: none;
-            padding: 0;
-            font-size: 18px;
-        }
-    </style>
+    #team-members {
+      background-color: #caf0f8;
+      border: 2px solid #0096c7;
+    }
+
+    #city-chart {
+      background-color: #fff3b0;
+      border: 2px solid #f4a261;
+    }
+
+    #ideas {
+      background-color: #f0efeb;
+      border: 2px solid #6a4c93;
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <div class="navbar">
-        <h1>CITY DESIGN</h1>
-        <div>
-            <a href="#">Home</a>
-            <a href="#">Project</a>
-        </div>
+  <div class="box" id="project-name">
+    <h1>Project: VYOM - City Design</h1>
+  </div>
+
+  <div class="container">
+    <div class="box" id="course-details">
+      <h2>Course Details</h2>
+      <p><strong>Course:</strong> Design & Analysis of Algorithms</p>
+      <p><strong>Course Code:</strong> 24ECSC205</p>
+      <p><strong>Instructor:</strong> Prof. Prakash Hegade</p>
+      <p><strong>University:</strong> KLE Technological University</p>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="content">
-        <h2>Introducing<br>VYOM</h2>
-        <p>
-            VYOM is a futuristic smart city designed with sustainability, 
-            modern infrastructure, efficient resource management, and 
-            citizen-friendly planning. Built for innovation and comfort, 
-            VYOM aims to provide high-quality urban living with minimal 
-            environmental impact.
-        </p>
-
-        <!-- TEAM MEMBERS SECTION -->
-        <div class="team-box">
-            <h3>Team Members</h3>
-            <ul>
-                <li>Vachana Shivanand Kudasomannavar</li>
-                <li>Vijayalakshmi H M</li>
-                <li>Sushma A H</li>
-            </ul>
-        </div>
+    <div class="box" id="team-members">
+      <h2>Team Members</h2>
+      <div class="team-member">Vachana Shivanand Kudasomannavar</div>
+      <div class="team-member">Vijayalakshmi H.M</div>
+      <div class="team-member">Sushma A.H</div>
     </div>
+
+    <div class="box" id="city-chart">
+      <h2>City Chart</h2>
+      <!-- Replace below with your chart image -->
+      <img src="your-chart-image.png" alt="City Chart" class="chart">
+    </div>
+
+    <div class="box" id="ideas">
+      <h2>Ideas</h2>
+      <div class="ideas-box" contenteditable="true">
+        <!-- You can type your ideas here -->
+        Add your ideas about city design here...
+      </div>
+    </div>
+  </div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VYOM - City Design Project</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eef2f7;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #1b4965;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .team-member {
+      background-color: #cde7f0;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 5px 0;
+      font-weight: bold;
+      color: #034f84;
+    }
+
+    .ideas-box {
+      background-color: #fff9e6;
+      border: 2px dashed #f4a261;
+      border-radius: 10px;
+      padding: 10px;
+      min-height: 120px;
+      font-style: italic;
+      color: #6a4c93;
+    }
+
+    img.chart {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      display: block;
+      margin-top: 10px;
+    }
+
+    /* Section colors */
+    #project-name {
+      background-color: #ffd6d6;
+      border: 2px solid #d62828;
+    }
+
+    #course-details {
+      background-color: #d0f4de;
+      border: 2px solid #2a9d8f;
+    }
+
+    #team-members {
+      background-color: #caf0f8;
+      border: 2px solid #0096c7;
+    }
+
+    #city-chart {
+      background-color: #fff3b0;
+      border: 2px solid #f4a261;
+    }
+
+    #ideas {
+      background-color: #f0efeb;
+      border: 2px solid #6a4c93;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box" id="project-name">
+    <h1>Project: VYOM - City Design</h1>
+  </div>
+
+  <div class="container">
+    <div class="box" id="course-details">
+      <h2>Course Details</h2>
+      <p><strong>Course:</strong> Design & Analysis of Algorithms</p>
+      <p><strong>Course Code:</strong> 24ECSC205</p>
+      <p><strong>Instructor:</strong> Prof. Prakash Hegade</p>
+      <p><strong>University:</strong> KLE Technological University</p>
+    </div>
+
+    <div class="box" id="team-members">
+      <h2>Team Members</h2>
+      <div class="team-member">Vachana Shivanand Kudasomannavar</div>
+      <div class="team-member">Vijayalakshmi H.M</div>
+      <div class="team-member">Sushma A.H</div>
+    </div>
+
+    <div class="box" id="city-chart">
+      <h2>City Chart</h2>
+      <!-- Replace below with your chart image -->
+      <img src="your-chart-image.png" alt="City Chart" class="chart">
+    </div>
+
+    <div class="box" id="ideas">
+      <h2>Ideas</h2>
+      <div class="ideas-box" contenteditable="true">
+        <!-- You can type your ideas here -->
+        Add your ideas about city design here...
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
