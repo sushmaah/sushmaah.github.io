@@ -1,9 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Design - VYOM</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #d9bd8b; /* beige */
+        }
+
+        /* NAVIGATION BAR */
+        .navbar {
+            background-color: #142952; /* dark blue */
+            padding: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #d9bd8b;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* MAIN CONTENT */
+        .content {
+            padding: 40px 20px;
+            text-align: center;
+            color: #142952;
+        }
+
+        .content h2 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* TEAM BOX */
+        .team-box {
+            margin-top: 40px;
+            padding: 20px;
+            background: #142952;
+            color: #d9bd8b;
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-box h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .team-box ul {
+            list-style: none;
+            padding: 0;
+            font-size: 18px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello! This is my GitHub Homepage</h1>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h1>CITY DESIGN</h1>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Project</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+        <h2>Introducing<br>VYOM</h2>
+        <p>
+            VYOM is a futuristic smart city designed with sustainability, 
+            modern infrastructure, efficient resource management, and 
+            citizen-friendly planning. Built for innovation and comfort, 
+            VYOM aims to provide high-quality urban living with minimal 
+            environmental impact.
+        </p>
+
+        <!-- TEAM MEMBERS SECTION -->
+        <div class="team-box">
+            <h3>Team Members</h3>
+            <ul>
+                <li>Vachana Shivanand Kudasomannavar</li>
+                <li>Vijayalakshmi H M</li>
+                <li>Sushma A H</li>
+            </ul>
+        </div>
+    </div>
+
 </body>
 </html>
