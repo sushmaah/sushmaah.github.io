@@ -1,33 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>City Design - Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VYOM - City Design Project</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #d7e8f7, #f7d7f1);
+    }
+
+    /* Navbar */
+    nav {
+      background: #4a148c;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #7b1fa2;
+    }
+
+    /* Sections */
+    section {
+      padding: 40px;
+      display: none;
+      animation: fadeIn 0.5s;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Project Section */
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 25px;
+    }
+
+    /* Team Box */
+    .team-box {
+      background: #ffebee;
+      border-left: 8px solid #d32f2f;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Course Box */
+    .course-box {
+      background: #e3f2fd;
+      border-left: 8px solid #1976d2;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="logo">CITY DESIGN</div>
-    <div class="menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-    </div>
-</div>
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('project')">Project</a>
+    <a href="#" onclick="showSection('team')">Team Members</a>
+    <a href="#" onclick="showSection('course')">Course Details</a>
+  </nav>
 
-<!-- CONTENT -->
-<div class="container">
-    <h1>Course Details</h1>
-
-    <div class="card">
-        <p><b>Course:</b> Design & Analysis of Algorithms</p>
-        <p><b>Course Code:</b> 24ECSC205</p>
-        <p><b>Instructor:</b> Prof. Prakash Hegade</p>
-        <p><b>University:</b> KLE Technological University</p>
+  <!-- Home Section -->
+  <section id="home" class="active">
+    <div class="box">
+      <h1>Welcome to VYOM City Design Project</h1>
+      <p><strong>City Name:</strong> VYOM</p>
+      <p>This portfolio presents the city design model created as part of our academic project.</p>
     </div>
-</div>
+  </section>
+
+  <!-- Project Section -->
+  <section id="project">
+    <div class="box">
+      <h2>About the Project</h2>
+      <p>VYOM is a conceptual city designed with modern infrastructure, sustainability, and innovation in mind. This project focuses on efficient city planning and structural layout.</p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team">
+    <h2>Team Members</h2>
+
+    <div class="team-box">
+      <h3>1. Vachana Shivanand Kudasomannavar</h3>
+      <p>Roll No: 437</p>
+    </div>
+
+    <div class="team-box">
+      <h3>2. Vijayalakshmi H. M</h3>
+      <p>Roll No: 414</p>
+    </div>
+
+    <div class="team-box">
+      <h3>3. Sushma A. H</h3>
+      <p>Roll No: 438</p>
+    </div>
+  </section>
+
+  <!-- Course Section -->
+  <section id="course">
+    <div class="course-box">
+      <h2>Course Details</h2>
+      <p><strong>Course:</strong> Design & Analysis of Algorithms</p>
+      <p><strong>Course Code:</strong> 24ECSC205</p>
+      <p><strong>Instructor:</strong> Prof. Prakash Hegade</p>
+      <p><strong>University:</strong> KLE Technological University</p>
+    </div>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
-
