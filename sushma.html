@@ -119,3 +119,167 @@
 
 
     
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Business Ideas – Edit, Save & Add Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fa;
+            padding: 20px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+        }
+        .idea-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .edit-btn, .save-btn, .img-btn {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 8px;
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        .edit-btn { background: #007bff; color: white; }
+        .save-btn { background: #28a745; color: white; display: none; }
+        .img-btn { background: #6c757d; color: white; }
+        textarea {
+            width: 100%;
+            height: 110px;
+            font-size: 15px;
+            padding: 8px;
+            display: none;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        img {
+            max-width: 100%;
+            margin-top: 15px;
+            border-radius: 6px;
+            display: block;
+        }
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Business Ideas — Editable + Image</h1>
+<div id="idea-container"></div>
+
+<script>
+    const ideas = [
+        "1. Solar Energy Power Hub",
+        "2. Public Safety & CCTV Monitoring Center",
+        "3. Online Food & Grocery Delivery Service",
+        "4. Smart Parking System",
+        "5. Skill Development & Vocational Training Center",
+        "6. Smart Public Transport System"
+    ];
+    const container = document.getElementById("idea-container");
+
+    ideas.forEach((title, index) => {
+        const id = "idea" + index;
+        container.innerHTML += `
+            <div class="box" id="${id}-box">
+                <div class="idea-title">${title}</div>
+                
+                <p id="${id}-text"></p>
+                <textarea id="${id}-edit"></textarea><br>
+
+                <button class="edit-btn" id="${id}-edit-btn" onclick="editIdea('${id}')">Edit</button>
+                <button class="save-btn" id="${id}-save-btn" onclick="saveIdea('${id}')">Save</button>
+
+                <button class="img-btn" onclick="triggerFile('${id}')">Add / Change Image</button>
+                <input type="file" accept="image/*" id="${id}-fileinput">
+
+                <div id="${id}-img-container"></div>
+            </div>
+        `;
+    });
+
+    // Load saved text & images
+    ideas.forEach((_, index) => {
+        const id = "idea" + index;
+        const savedText = localStorage.getItem(id + "-text");
+        if (savedText) {
+            document.getElementById(id + "-text").innerText = savedText;
+        } else {
+            document.getElementById(id + "-text").innerText = "Write explanation here...";
+        }
+
+        const imgData = localStorage.getItem(id + "-img");
+        if (imgData) {
+            displayImage(id, imgData);
+        }
+    });
+
+    function editIdea(id) {
+        const textP = document.getElementById(id + "-text");
+        const editArea = document.getElementById(id + "-edit");
+        editArea.value = textP.innerText;
+
+        textP.style.display = "none";
+        editArea.style.display = "block";
+
+        document.getElementById(id + "-edit-btn").style.display = "none";
+        document.getElementById(id + "-save-btn").style.display = "inline-block";
+    }
+
+    function saveIdea(id) {
+        const editArea = document.getElementById(id + "-edit");
+        const textP = document.getElementById(id + "-text");
+        const newText = editArea.value;
+
+        textP.innerText = newText;
+        localStorage.setItem(id + "-text", newText);
+
+        textP.style.display = "block";
+        editArea.style.display = "none";
+
+        document.getElementById(id + "-save-btn").style.display = "none";
+        document.getElementById(id + "-edit-btn").style.display = "inline-block";
+    }
+
+    function triggerFile(id) {
+        document.getElementById(id + "-fileinput").click();
+    }
+
+    function displayImage(id, dataUrl) {
+        const imgC = document.getElementById(id + "-img-container");
+        imgC.innerHTML = `<img src="${dataUrl}" alt="Idea Image">`;
+    }
+
+    // Handle image file input, convert to base64 and save
+    ideas.forEach((_, index) => {
+        const id = "idea" + index;
+        document.getElementById(id + "-fileinput").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const dataUrl = e.target.result;
+                localStorage.setItem(id + "-img", dataUrl);
+                displayImage(id, dataUrl);
+            };
+            reader.readAsDataURL(file);
+        });
+    });
+</script>
+
+</body>
+</html>
