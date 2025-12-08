@@ -31,92 +31,71 @@
 </html>
 
 
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Ideas</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Ideas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-      background-color: #4a90e2;
-      color: white;
-      padding: 15px 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        header {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-    header button {
-      background-color: #fff;
-      color: #4a90e2;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      float: left;
-      margin-top: 5px;
-    }
+        header a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            background: #ff7e5f;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
+        header a:hover {
+            background: #feb47b;
+        }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 30px 10px;
-      gap: 20px;
-    }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 20px;
+        }
 
-    .idea-card {
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      border-radius: 15px;
-      padding: 20px;
-      width: 250px;
-      color: #333;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
+        .idea-box {
+            padding: 25px;
+            font-size: 1.2rem;
+            color: white;
+            font-weight: bold;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
 
-    .idea-card:hover {
-      transform: translateY(-10px);
-    }
-  </style>
-</head>
-<body>
+        .idea-box:hover {
+            transform: translateY(-5px);
+        }
 
-  <header>
-    <button onclick="goHome()">Back to Home</button>
-    <h1>My 6 Business Ideas</h1>
-  </header>
-
-  <div class="container">
-    <div class="idea-card">Idea 1: Food Delivery for Office Workers</div>
-    <div class="idea-card">Idea 2: Eco-friendly Packaging Startup</div>
-    <div class="idea-card">Idea 3: Mobile Car Wash Service</div>
-    <div class="idea-card">Idea 4: Online Skill-based Courses</div>
-    <div class="idea-card">Idea 5: Local Travel & Experience App</div>
-    <div class="idea-card">Idea 6: Subscription-based Book Club</div>
-  </div>
-
-  <script>
-    function goHome() {
-      window.location.href = "index.html"; // change this to your home page URL
-    }
-  </script>
-
-</body>
-</html>
+        .idea1 { background: #FF6B6B; }
+        .idea2 { background:
