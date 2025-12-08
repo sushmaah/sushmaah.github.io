@@ -2,254 +2,246 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vijayalakshmi – Business Ideas</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Vijayalakshmi – City Design Business Idea Generation</title>
 
     <style>
         body {
+            background: #eef2f3;
             font-family: Arial, sans-serif;
-            background: #f0f4ff;
             margin: 0;
             padding: 0;
         }
 
-        h1 {
+        /* HEADER */
+        .header {
+            background: #1f3b57;
+            padding: 20px;
             text-align: center;
-            margin-top: 20px;
-        }
-
-        .idea-box {
-            width: 80%;
-            margin: 15px auto;
-            padding: 15px;
-            border-radius: 12px;
-            cursor: pointer;
             color: white;
+            font-size: 22px;
             font-weight: bold;
-            transition: 0.3s ease;
         }
 
-        .content {
-            display: none;
-            padding: 15px;
-            background: white;
+        /* BACK BUTTON */
+        .home-btn {
+            display: block;
+            margin: 20px auto;
+            width: 180px;
+            text-align: center;
+            padding: 10px;
+            background: #2ecc71;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        /* ACCORDION BUTTON */
+        .accordion {
+            width: 90%;
+            margin: 10px auto;
+            background: #ffffff;
+            padding: 14px;
             border-radius: 10px;
-            margin-top: 10px;
-            color: black;
-            font-size: 15px;
-            animation: fadeIn 0.4s ease;
+            font-size: 18px;
+            box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: 0.2s;
         }
 
-        .idea-box:hover {
-            transform: scale(1.02);
+        .accordion:hover {
+            background: #e7f2ff;
         }
 
-        /* Smooth fade animation */
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(-5px);}
+        /* CONTENT BOX */
+        .content-box {
+            width: 90%;
+            margin: 10px auto;
+            padding: 18px;
+            background: #ffffff;
+            border-left: 5px solid #1f3b57;
+            border-radius: 10px;
+            display: none;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from {opacity: 0; transform: translateY(-8px);}
             to {opacity: 1; transform: translateY(0);}
         }
+
+        h3 {
+            margin-bottom: 4px;
+            color: #1f3b57;
+        }
+
+        ul { margin-top: 5px; }
     </style>
 
     <script>
         function toggleContent(id) {
-            var content = document.getElementById(id);
-            content.style.display = (content.style.display === "block") ? "none" : "block";
+            var box = document.getElementById(id);
+            box.style.display = (box.style.display === "block") ? "none" : "block";
         }
     </script>
-
 </head>
+
 <body>
 
-<h1>Business Idea Generation</h1>
+    <!-- HEADER -->
+    <div class="header">Vijayalakshmi – City Design: Business Idea Generation</div>
 
-<!-- 1 -->
-<div class="idea-box" onclick="toggleContent('idea1')" style="background:#ff4d4d;">
-    📚 Public Library – Smart Digital Knowledge Hub
-</div>
-<div class="content" id="idea1">
-    <b>🔴 Problem:</b>
-    <ul>
-        <li>Students waste time searching books</li>
-        <li>No tracking of book availability</li>
-    </ul>
+    <!-- BACK BUTTON -->
+    <a href="index.html" class="home-btn">⬅ Back to Home</a>
 
-    <b>✅ Smart Business Idea:</b>
-    <ul>
-        <li>Online book search</li>
-        <li>Seat booking system</li>
-        <li>E-book access</li>
-        <li>AI-based book recommendation</li>
-    </ul>
+    <!-- 1) PUBLIC LIBRARY -->
+    <div class="accordion" onclick="toggleContent('lib')">📚 Public Library – Smart Digital Knowledge Hub</div>
+    <div id="lib" class="content-box">
 
-    <b>⚙ Algorithm Used:</b>
-    <ul>
-        <li>Search Algorithm → Find books fast</li>
-        <li>Sorting Algorithm → Arrange books by year/author</li>
-        <li>Greedy Algorithm → Seat allocation</li>
-    </ul>
+        <h3>🔴 Problem:</h3>
+        <ul>
+            <li>Students waste time searching books</li>
+            <li>No real-time tracking of book availability</li>
+            <li>Limited access to digital study resources</li>
+        </ul>
 
-    <b>💼 Business Benefit:</b>
-    <ul>
-        <li>Premium membership</li>
-        <li>Online subscriptions</li>
-        <li>Exam material selling</li>
-    </ul>
-</div>
+        <h3>✅ Smart Business Idea:</h3>
+        <ul>
+            <li>Create an AI-based Digital Library System</li>
+            <li>Online book search + book location tracking</li>
+            <li>Seat booking with time-slot management</li>
+            <li>Provide e-book access</li>
+            <li>AI recommendation system</li>
+        </ul>
 
-<!-- 2 -->
-<div class="idea-box" onclick="toggleContent('idea2')" style="background:#6a5acd;">
-    🚌 Smart Bus Tracking System
-</div>
-<div class="content" id="idea2">
-    <b>🔴 Problem:</b>
-    <ul>
-        <li>Students wait too long at bus stops</li>
-        <li>No accurate bus location</li>
-    </ul>
+        <h3>⚙ Algorithm Used:</h3>
+        <ul>
+            <li>Search Algorithm → Quickly find books</li>
+            <li>Sorting Algorithm → Arrange books by author/year</li>
+            <li>Greedy Algorithm → Best seat allocation</li>
+        </ul>
 
-    <b>✅ Smart Business Idea:</b>
-    <ul>
-        <li>Live GPS bus tracking</li>
-        <li>Arrival time prediction</li>
-        <li>Traffic-based rerouting</li>
-    </ul>
+        <h3>💼 Business Benefits:</h3>
+        <ul>
+            <li>Premium digital membership</li>
+            <li>Online learning subscription</li>
+            <li>Exam material selling</li>
+        </ul>
 
-    <b>⚙ Algorithm Used:</b>
-    <ul>
-        <li>Dijkstra Algorithm → Shortest path</li>
-        <li>Prediction Algorithm → ETA calculation</li>
-    </ul>
+    </div>
 
-    <b>💼 Business Benefit:</b>
-    <ul>
-        <li>Subscription for premium tracking</li>
-        <li>Ads for local services</li>
-    </ul>
-</div>
+    <!-- 2) WILDLIFE SANCTUARY -->
+    <div class="accordion" onclick="toggleContent('wild')">🦁 Wildlife Sanctuary – Smart Eco Tourism System</div>
+    <div id="wild" class="content-box">
 
-<!-- 3 -->
-<div class="idea-box" onclick="toggleContent('idea3')" style="background:#ff8c00;">
-    🏥 Smart Health Monitoring for Students
-</div>
-<div class="content" id="idea3">
-    <b>🔴 Problem:</b>
-    <ul>
-        <li>No regular health check updates</li>
-        <li>Emergency information missing</li>
-    </ul>
+        <h3>🔴 Problem:</h3>
+        <ul>
+            <li>Poor wildlife monitoring</li>
+            <li>No real-time visitor regulation</li>
+            <li>Hard to track animal movement</li>
+        </ul>
 
-    <b>✅ Smart Business Idea:</b>
-    <ul>
-        <li>Digital health history</li>
-        <li>Automated first-aid suggestions</li>
-        <li>Emergency alert system</li>
-    </ul>
+        <h3>✅ Smart Business Idea:</h3>
+        <ul>
+            <li>Animal tracking using IoT collars</li>
+            <li>Online safari booking portal</li>
+            <li>AI-based safety alerts</li>
+            <li>Smart digital guide with maps</li>
+        </ul>
 
-    <b>⚙ Algorithm Used:</b>
-    <ul>
-        <li>Decision Tree → Health suggestions</li>
-        <li>Classification Algorithm → Identify symptoms</li>
-    </ul>
+        <h3>⚙ Algorithm Used:</h3>
+        <ul>
+            <li>Pathfinding Algorithm → Animal movement</li>
+            <li>Greedy Algorithm → Visitor slot scheduling</li>
+            <li>Prediction Algorithm → Animal behavior prediction</li>
+        </ul>
 
-    <b>💼 Business Benefit:</b>
-    <ul>
-        <li>Health subscription plans</li>
-        <li>Partner with clinics</li>
-    </ul>
-</div>
+        <h3>💼 Business Benefits:</h3>
+        <ul>
+            <li>Safari ticket revenue</li>
+            <li>Premium wildlife tourism</li>
+            <li>Merchandise + documentary income</li>
+        </ul>
 
-<!-- 4 -->
-<div class="idea-box" onclick="toggleContent('idea4')" style="background:#009688;">
-    🍽 Smart Canteen Ordering System
-</div>
-<div class="content" id="idea4">
-    <b>🔴 Problem:</b>
-    <ul>
-        <li>Long queues for food</li>
-        <li>No tracking food availability</li>
-    </ul>
+    </div>
 
-    <b>✅ Smart Business Idea:</b>
-    <ul>
-        <li>Online ordering</li>
-        <li>Digital menu with pricing</li>
-        <li>Real-time stock update</li>
-    </ul>
+    <!-- 3) CLEANLINESS -->
+    <div class="accordion" onclick="toggleContent('clean')">🧹 Cleanliness & Public Health – Smart Hygiene Monitoring</div>
+    <div id="clean" class="content-box">
 
-    <b>⚙ Algorithm Used:</b>
-    <ul>
-        <li>Queue Algorithm → Manage orders</li>
-        <li>Sorting Algorithm → Prioritize orders</li>
-    </ul>
+        <h3>🔴 Problem:</h3>
+        <ul>
+            <li>Garbage bins overflow</li>
+            <li>Unclean public areas</li>
+            <li>Delays in complaint resolution</li>
+        </ul>
 
-    <b>💼 Business Benefit:</b>
-    <ul>
-        <li>Increase food sales</li>
-        <li>Loyalty rewards</li>
-    </ul>
-</div>
+        <h3>✅ Smart Business Idea:</h3>
+        <ul>
+            <li>Smart dustbins with fullness sensors</li>
+            <li>Mobile cleanliness complaint app</li>
+            <li>AI route planner for garbage trucks</li>
+            <li>City cleanliness dashboard</li>
+        </ul>
 
-<!-- 5 -->
-<div class="idea-box" onclick="toggleContent('idea5')" style="background:#e91e63;">
-    🎓 Smart Attendance & Study Planner
-</div>
-<div class="content" id="idea5">
-    <b>🔴 Problem:</b>
-    <ul>
-        <li>Students forget attendance percentage</li>
-        <li>Poor study schedule</li>
-    </ul>
+        <h3>⚙ Algorithm Used:</h3>
+        <ul>
+            <li>Dijkstra Algorithm → Shortest route for waste trucks</li>
+            <li>Queue Algorithm → Complaint handling</li>
+            <li>Classification Algorithm → Identify high-risk zones</li>
+        </ul>
 
-    <b>✅ Smart Business Idea:</b>
-    <ul>
-        <li>Auto attendance calculator</li>
-        <li>AI-based study timetable</li>
-    </ul>
+        <h3>💼 Business Benefits:</h3>
+        <ul>
+            <li>Government smart waste management contracts</li>
+            <li>App advertisement revenue</li>
+            <li>Corporate cleanliness partnerships</li>
+        </ul>
 
-    <b>⚙ Algorithm Used:</b>
-    <ul>
-        <li>Greedy Algorithm → Best time slot selection</li>
-        <li>DP Algorithm → Study optimization</li>
-    </ul>
+    </div>
 
-    <b>💼 Business Benefit:</b>
-    <ul>
-        <li>Paid premium app</li>
-        <li>Notes & question bank sale</li>
-    </ul>
-</div>
+    <!-- 4) PUBLIC GREEN SPACE -->
+    <div class="accordion" onclick="toggleContent('green')">🌿 Public Green Space – Smart Eco Park</div>
+    <div id="green" class="content-box">
 
-<!-- 6 -->
-<div class="idea-box" onclick="toggleContent('idea6')" style="background:#3f51b5;">
-    🛍 Smart Campus Shopping App
-</div>
-<div class="content" id="idea6">
-    <b>🔴 Problem:</b>
-    <ul>
-        <li>No quick access to student-needed items</li>
-        <li>Difficulty finding shops inside campus</li>
-    </ul>
+        <h3>🔴 Problem:</h3>
+        <ul>
+            <li>Low greenery in cities</li>
+            <li>Poor park maintenance</li>
+            <li>No air quality monitoring</li>
+        </ul>
 
-    <b>✅ Smart Business Idea:</b>
-    <ul>
-        <li>Campus marketplace</li>
-        <li>Lost & found section</li>
-        <li>Student-to-student selling</li>
-    </ul>
+        <h3>✅ Smart Business Idea:</h3>
+        <ul>
+            <li>Smart irrigation system</li>
+            <li>Air/CO₂ tracking sensors</li>
+            <li>Fitness tracking system for joggers</li>
+            <li>Park event booking platform</li>
+        </ul>
 
-    <b>⚙ Algorithm Used:</b>
-    <ul>
-        <li>Search Algorithm → Find items</li>
-        <li>Recommendation Algorithm → Suggest products</li>
-    </ul>
+        <h3>⚙ Algorithm Used:</h3>
+        <ul>
+            <li>Sensor Data Processing Algorithm</li>
+            <li>Optimization Algorithm → Water usage efficiency</li>
+            <li>Sorting Algorithm → Categorizing plants/trees</li>
+        </ul>
 
-    <b>💼 Business Benefit:</b>
-    <ul>
-        <li>Commission from sellers</li>
-        <li>Ad revenue</li>
-    </ul>
-</div>
+        <h3>💼 Business Benefits:</h3>
+        <ul>
+            <li>Park memberships</li>
+            <li>Event hosting revenue</li>
+            <li>Government maintenance funding</li>
+        </ul>
 
-</body>
-</html>
+    </div>
+
+    <!-- 5) WATER MANAGEMENT -->
+    <div class="accordion" onclick="toggleContent('water')">💧 Water Management – Smart Rainwater Harvesting</div>
+    <div id="water" class="content-box">
+
+        <h3>🔴 Problem:</h3>
+        <ul>
+            <li>Water wastage in households</li>
+            <
