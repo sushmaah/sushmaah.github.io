@@ -1,217 +1,255 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Vijayalakshmi - Business Idea Generation</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Vijayalakshmi – Business Ideas</title>
+    <link rel="stylesheet" href="style.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f4f6f9;
+            background: #f0f4ff;
             margin: 0;
+            padding: 0;
         }
 
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 20px;
+        h1 {
             text-align: center;
-            font-size: 28px;
-            font-weight: bold;
+            margin-top: 20px;
         }
 
-        .back-home {
-            display: block;
-            width: 180px;
-            margin: 15px auto 30px auto;
-            padding: 10px 0;
-            background: #1abc9c;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .back-home:hover {
-            background: #16a085;
-            transform: translateY(-3px);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 0 30px 30px 30px;
-        }
-
-        .accordion {
-            background-color: #fff;
-            color: #2c3e50;
-            cursor: pointer;
-            padding: 20px;
-            width: 100%;
+        .idea-box {
+            width: 80%;
+            margin: 15px auto;
+            padding: 15px;
             border-radius: 12px;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 18px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            transition: background 0.3s;
-        }
-
-        .accordion:hover {
-            background-color: #e8f6f3;
-        }
-
-        .accordion i {
-            margin-right: 12px;
-        }
-
-        .panel {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            background-color: #fefefe;
-            border-radius: 0 0 12px 12px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-
-        .panel ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 15px;
-        }
-
-        .panel ul li {
-            margin-bottom: 12px;
-            font-size: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .panel ul li i {
-            color: #2c3e50;
-            margin-right: 10px;
-            margin-top: 2px;
-            width: 18px;
-        }
-
-        .label {
+            cursor: pointer;
+            color: white;
             font-weight: bold;
+            transition: 0.3s ease;
         }
 
-        /* Color-coded panels for each business idea */
-        .panel1 { background: #e8f6f3; }
-        .panel2 { background: #fdf2e9; }
-        .panel3 { background: #f9ebf0; }
-        .panel4 { background: #eaf2f8; }
-        .panel5 { background: #fef9e7; }
-        .panel6 { background: #f4ecf7; }
+        .content {
+            display: none;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            margin-top: 10px;
+            color: black;
+            font-size: 15px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .idea-box:hover {
+            transform: scale(1.02);
+        }
+
+        /* Smooth fade animation */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(-5px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
     </style>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = (content.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
 </head>
 <body>
 
-<header>
-    Vijayalakshmi – City Design Business Idea Generation
-</header>
+<h1>Business Idea Generation</h1>
 
-<a href="index.html" class="back-home"><i class="fas fa-home"></i> Back to Home</a>
+<!-- 1 -->
+<div class="idea-box" onclick="toggleContent('idea1')" style="background:#ff4d4d;">
+    📚 Public Library – Smart Digital Knowledge Hub
+</div>
+<div class="content" id="idea1">
+    <b>🔴 Problem:</b>
+    <ul>
+        <li>Students waste time searching books</li>
+        <li>No tracking of book availability</li>
+    </ul>
 
-<div class="container">
+    <b>✅ Smart Business Idea:</b>
+    <ul>
+        <li>Online book search</li>
+        <li>Seat booking system</li>
+        <li>E-book access</li>
+        <li>AI-based book recommendation</li>
+    </ul>
 
-    <!-- 1. Public Library -->
-    <button class="accordion">📚 Public Library</button>
-    <div class="panel panel1">
-        <ul>
-            <li><i class="fas fa-exclamation-circle"></i><span class="label">Problem:</span> Students waste time searching books, limited access to digital resources.</li>
-            <li><i class="fas fa-lightbulb"></i><span class="label">Smart Business Idea:</span> Smart digital library with online book search, seat booking, e-books, and study material access.</li>
-            <li><i class="fas fa-cogs"></i><span class="label">Algorithm Used:</span> Search, Sorting, Greedy for seat allocation.</li>
-            <li><i class="fas fa-dollar-sign"></i><span class="label">Business Benefits:</span> Paid memberships, online courses, exam material sales.</li>
-        </ul>
-    </div>
+    <b>⚙ Algorithm Used:</b>
+    <ul>
+        <li>Search Algorithm → Find books fast</li>
+        <li>Sorting Algorithm → Arrange books by year/author</li>
+        <li>Greedy Algorithm → Seat allocation</li>
+    </ul>
 
-    <!-- 2. Wildlife Sanctuary -->
-    <button class="accordion">🦁 Wildlife Sanctuary</button>
-    <div class="panel panel2">
-        <ul>
-            <li><i class="fas fa-exclamation-circle"></i><span class="label">Problem:</span> Poor animal tracking, poaching risk, unorganized tourism.</li>
-            <li><i class="fas fa-lightbulb"></i><span class="label">Smart Business Idea:</span> GPS animal tracking, online safari booking, AI camera monitoring.</li>
-            <li><i class="fas fa-cogs"></i><span class="label">Algorithm Used:</span> Graph algorithms for tracking, Dijkstra for safe paths, Scheduling for tourist slots.</li>
-            <li><i class="fas fa-dollar-sign"></i><span class="label">Business Benefits:</span> Safari ticket revenue, eco-tourism income, research funding.</li>
-        </ul>
-    </div>
-
-    <!-- 3. Cleanliness & Public Health -->
-    <button class="accordion">🧹 Cleanliness & Public Health</button>
-    <div class="panel panel3">
-        <ul>
-            <li><i class="fas fa-exclamation-circle"></i><span class="label">Problem:</span> Garbage overflow, slow ambulance service, disease spread.</li>
-            <li><i class="fas fa-lightbulb"></i><span class="label">Smart Business Idea:</span> Smart dustbins, fast ambulance routing, hospital bed tracking, disease prediction.</li>
-            <li><i class="fas fa-cogs"></i><span class="label">Algorithm Used:</span> Shortest Path for ambulance, Prediction algorithms for disease spread, Greedy for garbage collection routes.</li>
-            <li><i class="fas fa-dollar-sign"></i><span class="label">Business Benefits:</span> Government health projects, private hospital services, waste contracts.</li>
-        </ul>
-    </div>
-
-    <!-- 4. Public Green Space -->
-    <button class="accordion">🌳 Public Green Space</button>
-    <div class="panel panel4">
-        <ul>
-            <li><i class="fas fa-exclamation-circle"></i><span class="label">Problem:</span> Poor maintenance, low safety, no crowd management.</li>
-            <li><i class="fas fa-lightbulb"></i><span class="label">Smart Business Idea:</span> Smart parks with lighting control, crowd monitoring, event booking, eco-walking tracks.</li>
-            <li><i class="fas fa-cogs"></i><span class="label">Algorithm Used:</span> Clustering for crowd detection, Path algorithms for walking routes, Greedy for resource allocation.</li>
-            <li><i class="fas fa-dollar-sign"></i><span class="label">Business Benefits:</span> Event rentals, fitness subscriptions, vendor income.</li>
-        </ul>
-    </div>
-
-    <!-- 5. Water Management -->
-    <button class="accordion">💧 Water Management & Rainwater Harvesting</button>
-    <div class="panel panel5">
-        <ul>
-            <li><i class="fas fa-exclamation-circle"></i><span class="label">Problem:</span> Water wastage, leakage, unequal supply.</li>
-            <li><i class="fas fa-lightbulb"></i><span class="label">Smart Business Idea:</span> Automatic rainwater harvesting, smart meters, leakage detection, priority water distribution.</li>
-            <li><i class="fas fa-cogs"></i><span class="label">Algorithm Used:</span> Max-Flow for water distribution, Greedy for priority supply, Detection algorithms for leakage.</li>
-            <li><i class="fas fa-dollar-sign"></i><span class="label">Business Benefits:</span> Water conservation grants, industrial water supply revenue.</li>
-        </ul>
-    </div>
-
-    <!-- 6. Bank -->
-    <button class="accordion">🏦 Bank</button>
-    <div class="panel panel6">
-        <ul>
-            <li><i class="fas fa-exclamation-circle"></i><span class="label">Problem:</span> Long queues, loan delays, fraud risks.</li>
-            <li><i class="fas fa-lightbulb"></i><span class="label">Smart Business Idea:</span> Smart digital banking, online loans, AI fraud detection, smart ATMs.</li>
-            <li><i class="fas fa-cogs"></i><span class="label">Algorithm Used:</span> Queue management algorithms, Hashing for secure transactions, Graph algorithms for ATM placement.</li>
-            <li><i class="fas fa-dollar-sign"></i><span class="label">Business Benefits:</span> Loan interest income, digital transaction charges, customer subscriptions.</li>
-        </ul>
-    </div>
-
+    <b>💼 Business Benefit:</b>
+    <ul>
+        <li>Premium membership</li>
+        <li>Online subscriptions</li>
+        <li>Exam material selling</li>
+    </ul>
 </div>
 
-<script>
-    const acc = document.getElementsByClassName("accordion");
-    for (let i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            const panel = this.nextElementSibling;
+<!-- 2 -->
+<div class="idea-box" onclick="toggleContent('idea2')" style="background:#6a5acd;">
+    🚌 Smart Bus Tracking System
+</div>
+<div class="content" id="idea2">
+    <b>🔴 Problem:</b>
+    <ul>
+        <li>Students wait too long at bus stops</li>
+        <li>No accurate bus location</li>
+    </ul>
 
-            // Toggle this panel
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-                panel.style.padding = "0 20px";
-            } else {
-                // Close all other panels
-                for (let j = 0; j < acc.length; j++) {
-                    acc[j].nextElementSibling.style.maxHeight = null;
-                    acc[j].nextElementSibling.style.padding = "0 20px";
-                }
-                panel.style.maxHeight = panel.scrollHeight + "px";
-                panel.style.padding = "20px";
-            }
-        });
-    }
-</script>
+    <b>✅ Smart Business Idea:</b>
+    <ul>
+        <li>Live GPS bus tracking</li>
+        <li>Arrival time prediction</li>
+        <li>Traffic-based rerouting</li>
+    </ul>
+
+    <b>⚙ Algorithm Used:</b>
+    <ul>
+        <li>Dijkstra Algorithm → Shortest path</li>
+        <li>Prediction Algorithm → ETA calculation</li>
+    </ul>
+
+    <b>💼 Business Benefit:</b>
+    <ul>
+        <li>Subscription for premium tracking</li>
+        <li>Ads for local services</li>
+    </ul>
+</div>
+
+<!-- 3 -->
+<div class="idea-box" onclick="toggleContent('idea3')" style="background:#ff8c00;">
+    🏥 Smart Health Monitoring for Students
+</div>
+<div class="content" id="idea3">
+    <b>🔴 Problem:</b>
+    <ul>
+        <li>No regular health check updates</li>
+        <li>Emergency information missing</li>
+    </ul>
+
+    <b>✅ Smart Business Idea:</b>
+    <ul>
+        <li>Digital health history</li>
+        <li>Automated first-aid suggestions</li>
+        <li>Emergency alert system</li>
+    </ul>
+
+    <b>⚙ Algorithm Used:</b>
+    <ul>
+        <li>Decision Tree → Health suggestions</li>
+        <li>Classification Algorithm → Identify symptoms</li>
+    </ul>
+
+    <b>💼 Business Benefit:</b>
+    <ul>
+        <li>Health subscription plans</li>
+        <li>Partner with clinics</li>
+    </ul>
+</div>
+
+<!-- 4 -->
+<div class="idea-box" onclick="toggleContent('idea4')" style="background:#009688;">
+    🍽 Smart Canteen Ordering System
+</div>
+<div class="content" id="idea4">
+    <b>🔴 Problem:</b>
+    <ul>
+        <li>Long queues for food</li>
+        <li>No tracking food availability</li>
+    </ul>
+
+    <b>✅ Smart Business Idea:</b>
+    <ul>
+        <li>Online ordering</li>
+        <li>Digital menu with pricing</li>
+        <li>Real-time stock update</li>
+    </ul>
+
+    <b>⚙ Algorithm Used:</b>
+    <ul>
+        <li>Queue Algorithm → Manage orders</li>
+        <li>Sorting Algorithm → Prioritize orders</li>
+    </ul>
+
+    <b>💼 Business Benefit:</b>
+    <ul>
+        <li>Increase food sales</li>
+        <li>Loyalty rewards</li>
+    </ul>
+</div>
+
+<!-- 5 -->
+<div class="idea-box" onclick="toggleContent('idea5')" style="background:#e91e63;">
+    🎓 Smart Attendance & Study Planner
+</div>
+<div class="content" id="idea5">
+    <b>🔴 Problem:</b>
+    <ul>
+        <li>Students forget attendance percentage</li>
+        <li>Poor study schedule</li>
+    </ul>
+
+    <b>✅ Smart Business Idea:</b>
+    <ul>
+        <li>Auto attendance calculator</li>
+        <li>AI-based study timetable</li>
+    </ul>
+
+    <b>⚙ Algorithm Used:</b>
+    <ul>
+        <li>Greedy Algorithm → Best time slot selection</li>
+        <li>DP Algorithm → Study optimization</li>
+    </ul>
+
+    <b>💼 Business Benefit:</b>
+    <ul>
+        <li>Paid premium app</li>
+        <li>Notes & question bank sale</li>
+    </ul>
+</div>
+
+<!-- 6 -->
+<div class="idea-box" onclick="toggleContent('idea6')" style="background:#3f51b5;">
+    🛍 Smart Campus Shopping App
+</div>
+<div class="content" id="idea6">
+    <b>🔴 Problem:</b>
+    <ul>
+        <li>No quick access to student-needed items</li>
+        <li>Difficulty finding shops inside campus</li>
+    </ul>
+
+    <b>✅ Smart Business Idea:</b>
+    <ul>
+        <li>Campus marketplace</li>
+        <li>Lost & found section</li>
+        <li>Student-to-student selling</li>
+    </ul>
+
+    <b>⚙ Algorithm Used:</b>
+    <ul>
+        <li>Search Algorithm → Find items</li>
+        <li>Recommendation Algorithm → Suggest products</li>
+    </ul>
+
+    <b>💼 Business Benefit:</b>
+    <ul>
+        <li>Commission from sellers</li>
+        <li>Ad revenue</li>
+    </ul>
+</div>
 
 </body>
 </html>
