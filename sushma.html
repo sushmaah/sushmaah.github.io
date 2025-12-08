@@ -116,3 +116,149 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>City Services Dashboard</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif; 
+      background:#f4f6f9; 
+      margin:0; 
+      padding:20px
+    }
+    .grid{
+      display:grid; 
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); 
+      gap:16px
+    }
+    .card{
+      background:white; 
+      padding:16px; 
+      border-radius:12px; 
+      box-shadow:0 2px 6px rgba(0,0,0,0.08)
+    }
+    .card h3{
+      margin:0 0 8px
+    }
+    .card p{
+      margin:4px 0
+    }
+    .placeholder{
+      height:140px; 
+      border-radius:8px; 
+      background:linear-gradient(90deg,#eceff1,#f8fafc); 
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#777
+    }
+    .code{
+      font-family:monospace; 
+      font-size:13px; 
+      background:#111; 
+      color:#fff; 
+      padding:8px; 
+      border-radius:6px; 
+      overflow:auto
+    }
+  </style>
+</head>
+<body>
+  <h1>City Services — Demo Dashboard</h1>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Solar Energy Power Hub</h3>
+      <div class="placeholder">Image: Solar panels on rooftop</div>
+      <p>Start: Pilot rooftop → connect to local grid → add batteries.</p>
+    </div>
+
+    <div class="card">
+      <h3>Public Safety & CCTV</h3>
+      <div class="placeholder">Image: CCTV monitoring screens</div>
+      <p>Start: Cameras at 3 busy intersections → central monitoring.</p>
+    </div>
+
+    <div class="card">
+      <h3>Food & Grocery Delivery</h3>
+      <div class="placeholder">Image: App order + rider</div>
+      <p>Start: Partner 10 stores → onboard riders → simple app orders.</p>
+    </div>
+
+    <div class="card">
+      <h3>Smart Parking System</h3>
+      <div class="placeholder">Image: Parking map with free slots</div>
+      <p>Start: Sensor at one lot → show slots on signboard/app.</p>
+    </div>
+
+    <div class="card">
+      <h3>Skill Development Center</h3>
+      <div class="placeholder">Image: Classroom training</div>
+      <p>Start: 2 short courses based on city demand; demo classes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Smart Public Transport</h3>
+      <div class="placeholder">Image: Live bus tracking map</div>
+      <p>Start: GPS on 5 buses → show ETAs on app → improve routes.</p>
+    </div>
+
+  </div>
+
+  <h2>Quick JS: Find nearest parking slot</h2>
+  <pre class="code">
+// Very small example: choose nearest free slot (Euclidean)
+function nearestSlot(current, slots){
+  let best = null; 
+  let bestD = Infinity;
+
+  for(const s of slots){
+    if(!s.free) continue;
+
+    const dx = s.x - current.x; 
+    const dy = s.y - current.y;
+    const d = Math.sqrt(dx*dx + dy*dy);
+
+    if(d < bestD){
+      bestD = d; 
+      best = s;
+    }
+  }
+
+  return best;
+}
+  </pre>
+
+  <h2>Quick Python: Dijkstra (for routes)</h2>
+  <pre class="code">
+# Simple Dijkstra (adj list)
+import heapq
+
+def dijkstra(adj, start):
+    dist = {v: float('inf') for v in adj}
+    dist[start] = 0
+    pq = [(0, start)]
+
+    while pq:
+        d, u = heapq.heappop(pq)
+        if d > dist[u]: 
+            continue
+
+        for v, w in adj[u]:
+            nd = d + w
+            if nd < dist[v]:
+                dist[v] = nd
+                heapq.heappush(pq, (nd, v))
+
+    return dist
+
+# Use this to compute shortest routes for delivery or buses
+  </pre>
+
+</body>
+            </html>
