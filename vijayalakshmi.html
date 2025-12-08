@@ -1,211 +1,239 @@
-            font-weight: bold;
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vijayalakshmi – City Design Business Idea Generation</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #eef2f7;
+        margin: 0;
+        padding: 20px;
+    }
 
-        /* ACCORDION BUTTON */
-        .accordion {
-            width: 90%;
-            margin: 10px auto;
-            background: #ffffff;
-            padding: 14px;
-            border-radius: 10px;
-            font-size: 18px;
-            box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
-            cursor: pointer;
-            transition: 0.2s;
-        }
+    h1 {
+        text-align: center;
+        color: #333;
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
 
-        .accordion:hover {
-            background: #e7f2ff;
-        }
+    .accordion {
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
-        /* CONTENT BOX */
-        .content-box {
-            width: 90%;
-            margin: 10px auto;
-            padding: 18px;
-            background: #ffffff;
-            border-left: 5px solid #1f3b57;
-            border-radius: 10px;
-            display: none;
-            box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
-            animation: slideDown 0.3s ease-in-out;
-        }
+    .item {
+        background: white;
+        margin: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
 
-        @keyframes slideDown {
-            from {opacity: 0; transform: translateY(-8px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
+    /* ACCORDION BUTTON */
+    .btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 17px;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 10px;
+        color: #333;
+    }
 
-        h3 {
-            margin-bottom: 4px;
-            color: #1f3b57;
-        }
+    /* Pastel Colors */
+    .c1 { background: #f8b4b4; }   /* Pastel Red */
+    .c2 { background: #b3e5cc; }   /* Pastel Green */
+    .c3 { background: #fce9b6; }   /* Pastel Yellow */
+    .c4 { background: #b7f2e5; }   /* Pastel Mint */
+    .c5 { background: #c7dfff; }   /* Pastel Blue */
+    .c6 { background: #d8c7ff; }   /* Pastel Purple */
 
-        ul { margin-top: 5px; }
-    </style>
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 15px;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        background: white;
+    }
 
-    <script>
-        function toggleContent(id) {
-            var box = document.getElementById(id);
-            box.style.display = (box.style.display === "block") ? "none" : "block";
-        }
-    </script>
+    .content.open {
+        padding: 15px;
+    }
+
+    p { margin: 6px 0; }
+</style>
+
+<script>
+function toggleContent(id) {
+    const content = document.getElementById(id);
+    content.classList.toggle("open");
+
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
+}
+</script>
+
 </head>
-
 <body>
 
-    <!-- HEADER -->
-    <div class="header">Vijayalakshmi – City Design: Business Idea Generation</div>
+<h1>Business Idea Generation</h1>
 
-    <!-- BACK BUTTON -->
-    <a href="index.html" class="home-btn">⬅ Back to Home</a>
+<div class="accordion">
 
-    <!-- 1) PUBLIC LIBRARY -->
-    <div class="accordion" onclick="toggleContent('lib')">📚 Public Library – Smart Digital Knowledge Hub</div>
-    <div id="lib" class="content-box">
+    <!-- 1 PUBLIC LIBRARY -->
+    <div class="item">
+        <button class="btn c1" onclick="toggleContent('lib')">
+            📚 Public Library – Smart Digital Knowledge Hub
+        </button>
+        <div class="content" id="lib">
+            <p><b>🔴 Problem:</b></p>
+            <p>• Students waste time searching for books.</p>
+            <p>• No tracking of book availability.</p>
+            <p>• Limited digital access.</p>
 
-        <h3>🔴 Problem:</h3>
-        <ul>
-            <li>Students waste time searching books</li>
-            <li>No real-time tracking of book availability</li>
-            <li>Limited access to digital study resources</li>
-        </ul>
+            <p><b>✅ Smart Business Idea:</b></p>
+            <p>• Smart Digital Library with online search.</p>
+            <p>• E-book access & digital study material.</p>
+            <p>• Seat booking system.</p>
 
-        <h3>✅ Smart Business Idea:</h3>
-        <ul>
-            <li>Create an AI-based Digital Library System</li>
-            <li>Online book search + book location tracking</li>
-            <li>Seat booking with time-slot management</li>
-            <li>Provide e-book access</li>
-            <li>AI recommendation system</li>
-        </ul>
+            <p><b>⚙ Algorithm Used:</b></p>
+            <p>• Search Algorithm – Fast book search</p>
+            <p>• Sorting Algorithm – Arrange by author/year</p>
+            <p>• Greedy Algorithm – Seat allocation</p>
 
-        <h3>⚙ Algorithm Used:</h3>
-        <ul>
-            <li>Search Algorithm → Quickly find books</li>
-            <li>Sorting Algorithm → Arrange books by author/year</li>
-            <li>Greedy Algorithm → Best seat allocation</li>
-        </ul>
-
-        <h3>💼 Business Benefits:</h3>
-        <ul>
-            <li>Premium digital membership</li>
-            <li>Online learning subscription</li>
-            <li>Exam material selling</li>
-        </ul>
-
+            <p><b>💼 Business Benefits:</b></p>
+            <p>• Paid memberships</p>
+            <p>• Online learning subscriptions</p>
+            <p>• Exam material sales</p>
+        </div>
     </div>
 
-    <!-- 2) WILDLIFE SANCTUARY -->
-    <div class="accordion" onclick="toggleContent('wild')">🦁 Wildlife Sanctuary – Smart Eco Tourism System</div>
-    <div id="wild" class="content-box">
+    <!-- 2 WILDLIFE SANCTUARY -->
+    <div class="item">
+        <button class="btn c2" onclick="toggleContent('wild')">
+            🐾 Wildlife Sanctuary – Smart Eco Monitoring System
+        </button>
+        <div class="content" id="wild">
+            <p><b>🔴 Problem:</b></p>
+            <p>• Animals are difficult to track manually.</p>
+            <p>• Lack of environmental monitoring.</p>
 
-        <h3>🔴 Problem:</h3>
-        <ul>
-            <li>Poor wildlife monitoring</li>
-            <li>No real-time visitor regulation</li>
-            <li>Hard to track animal movement</li>
-        </ul>
+            <p><b>✅ Smart Business Idea:</b></p>
+            <p>• Deploy smart sensors for animal tracking.</p>
+            <p>• GPS collars to monitor movement.</p>
 
-        <h3>✅ Smart Business Idea:</h3>
-        <ul>
-            <li>Animal tracking using IoT collars</li>
-            <li>Online safari booking portal</li>
-            <li>AI-based safety alerts</li>
-            <li>Smart digital guide with maps</li>
-        </ul>
+            <p><b>⚙ Algorithm Used:</b></p>
+            <p>• Pathfinding Algorithm – Tracks movement</p>
+            <p>• Monitoring Algorithms – Sensor data analysis</p>
 
-        <h3>⚙ Algorithm Used:</h3>
-        <ul>
-            <li>Pathfinding Algorithm → Animal movement</li>
-            <li>Greedy Algorithm → Visitor slot scheduling</li>
-            <li>Prediction Algorithm → Animal behavior prediction</li>
-        </ul>
-
-        <h3>💼 Business Benefits:</h3>
-        <ul>
-            <li>Safari ticket revenue</li>
-            <li>Premium wildlife tourism</li>
-            <li>Merchandise + documentary income</li>
-        </ul>
-
+            <p><b>💼 Business Benefits:</b></p>
+            <p>• Wildlife tourism improvement</p>
+            <p>• Adoption and donation programs</p>
+        </div>
     </div>
 
-    <!-- 3) CLEANLINESS -->
-    <div class="accordion" onclick="toggleContent('clean')">🧹 Cleanliness & Public Health – Smart Hygiene Monitoring</div>
-    <div id="clean" class="content-box">
+    <!-- 3 CLEANLINESS -->
+    <div class="item">
+        <button class="btn c3" onclick="toggleContent('clean')">
+            ♻️ Cleanliness & Public Health – Smart Hygiene System
+        </button>
+        <div class="content" id="clean">
+            <p><b>🔴 Problem:</b></p>
+            <p>• Garbage overflow in public areas.</p>
+            <p>• Slow response to health hazards.</p>
 
-        <h3>🔴 Problem:</h3>
-        <ul>
-            <li>Garbage bins overflow</li>
-            <li>Unclean public areas</li>
-            <li>Delays in complaint resolution</li>
-        </ul>
+            <p><b>✅ Smart Business Idea:</b></p>
+            <p>• Smart dustbins with sensors.</p>
+            <p>• Automatic garbage level alerts.</p>
 
-        <h3>✅ Smart Business Idea:</h3>
-        <ul>
-            <li>Smart dustbins with fullness sensors</li>
-            <li>Mobile cleanliness complaint app</li>
-            <li>AI route planner for garbage trucks</li>
-            <li>City cleanliness dashboard</li>
-        </ul>
+            <p><b>⚙ Algorithm Used:</b></p>
+            <p>• Sensor algorithms – Detect waste level</p>
+            <p>• Optimization Algorithm – Best route for cleaning vehicle</p>
 
-        <h3>⚙ Algorithm Used:</h3>
-        <ul>
-            <li>Dijkstra Algorithm → Shortest route for waste trucks</li>
-            <li>Queue Algorithm → Complaint handling</li>
-            <li>Classification Algorithm → Identify high-risk zones</li>
-        </ul>
-
-        <h3>💼 Business Benefits:</h3>
-        <ul>
-            <li>Government smart waste management contracts</li>
-            <li>App advertisement revenue</li>
-            <li>Corporate cleanliness partnerships</li>
-        </ul>
-
+            <p><b>💼 Business Benefits:</b></p>
+            <p>• Cleaner cities</p>
+            <p>• Reduced workforce cost</p>
+        </div>
     </div>
 
-    <!-- 4) PUBLIC GREEN SPACE -->
-    <div class="accordion" onclick="toggleContent('green')">🌿 Public Green Space – Smart Eco Park</div>
-    <div id="green" class="content-box">
+    <!-- 4 GREEN SPACE -->
+    <div class="item">
+        <button class="btn c4" onclick="toggleContent('green')">
+            🌳 Public Green Space – Smart Environment Planner
+        </button>
+        <div class="content" id="green">
+            <p><b>🔴 Problem:</b></p>
+            <p>• Poor maintenance of parks.</p>
 
-        <h3>🔴 Problem:</h3>
-        <ul>
-            <li>Low greenery in cities</li>
-            <li>Poor park maintenance</li>
-            <li>No air quality monitoring</li>
-        </ul>
+            <p><b>✅ Smart Business Idea:</b></p>
+            <p>• Smart irrigation system.</p>
+            <p>• Automated lighting and safety system.</p>
 
-        <h3>✅ Smart Business Idea:</h3>
-        <ul>
-            <li>Smart irrigation system</li>
-            <li>Air/CO₂ tracking sensors</li>
-            <li>Fitness tracking system for joggers</li>
-            <li>Park event booking platform</li>
-        </ul>
+            <p><b>⚙ Algorithm Used:</b></p>
+            <p>• Water-saving algorithms</p>
+            <p>• Environment optimization algorithms</p>
 
-        <h3>⚙ Algorithm Used:</h3>
-        <ul>
-            <li>Sensor Data Processing Algorithm</li>
-            <li>Optimization Algorithm → Water usage efficiency</li>
-            <li>Sorting Algorithm → Categorizing plants/trees</li>
-        </ul>
-
-        <h3>💼 Business Benefits:</h3>
-        <ul>
-            <li>Park memberships</li>
-            <li>Event hosting revenue</li>
-            <li>Government maintenance funding</li>
-        </ul>
-
+            <p><b>💼 Business Benefits:</b></p>
+            <p>• Better public engagement</p>
+        </div>
     </div>
 
-    <!-- 5) WATER MANAGEMENT -->
-    <div class="accordion" onclick="toggleContent('water')">💧 Water Management – Smart Rainwater Harvesting</div>
-    <div id="water" class="content-box">
+    <!-- 5 WATER MANAGEMENT -->
+    <div class="item">
+        <button class="btn c5" onclick="toggleContent('water')">
+            💧 Water Management & Rainwater Harvesting
+        </button>
+        <div class="content" id="water">
+            <p><b>🔴 Problem:</b></p>
+            <p>• Water wastage.</p>
+            <p>• No real-time usage monitoring.</p>
 
-        <h3>🔴 Problem:</h3>
-        <ul>
-            <li>Water wastage in households</li>
-            <
+            <p><b>✅ Smart Business Idea:</b></p>
+            <p>• Smart meters for water usage.</p>
+            <p>• Rainwater harvesting tank monitoring.</p>
+
+            <p><b>⚙ Algorithm Used:</b></p>
+            <p>• Monitoring algorithms</p>
+            <p>• Water level prediction algorithms</p>
+
+            <p><b>💼 Business Benefits:</b></p>
+            <p>• Lower water bills</p>
+            <p>• High sustainability value</p>
+        </div>
+    </div>
+
+    <!-- 6 BANK -->
+    <div class="item">
+        <button class="btn c6" onclick="toggleContent('bank')">
+            🏦 Bank – Smart Campus Finance System
+        </button>
+        <div class="content" id="bank">
+            <p><b>🔴 Problem:</b></p>
+            <p>• Students take long time for simple banking tasks.</p>
+
+            <p><b>✅ Smart Business Idea:</b></p>
+            <p>• Smart campus ATM.</p>
+            <p>• Digital student payments.</p>
+
+            <p><b>⚙ Algorithm Used:</b></p>
+            <p>• Security algorithms</p>
+            <p>• Encryption algorithms</p>
+
+            <p><b>💼 Business Benefits:</b></p>
+            <p>• Fast transactions</p>
+            <p>• Increased safety</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
