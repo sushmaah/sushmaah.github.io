@@ -384,3 +384,155 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Business Ideas – Click to View Details</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #eef2ff;
+        padding: 20px;
+    }
+    .home-btn {
+        display: inline-block;
+        background: #4b6bff;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .idea-box {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .idea-box:hover {
+        transform: scale(1.02);
+    }
+    .title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #2d2d2d;
+    }
+    .details {
+        margin-top: 15px;
+        padding: 15px;
+        background: #f8f9ff;
+        border-radius: 10px;
+        display: none;
+    }
+    .point {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<a class="home-btn" href="#">⬅ Back to Home</a>
+
+<!-- 1. Solar Energy Power Hub -->
+<div class="idea-box" onclick="toggle('solar')">
+    <div class="title">1. Solar Energy Power Hub</div>
+    <div class="details" id="solar">
+        <div class="point"><b>✔ What is the idea?</b> A central solar station supplying clean energy.</div>
+        <div class="point"><b>✔ How it helps?</b> Reduces bills, clean energy, fewer power cuts.</div>
+        <div class="point"><b>✔ Implementation:</b> Select site → Install panels → Battery → Supply → IoT monitor.</div>
+        <div class="point"><b>✔ Algorithms:</b> Sorting, Graph, Prediction, Optimisation.</div>
+    </div>
+</div>
+
+<!-- 2. Public Safety & CCTV Monitoring -->
+<div class="idea-box" onclick="toggle('cctv')">
+    <div class="title">2. Public Safety & CCTV Monitoring Center</div>
+    <div class="details" id="cctv">
+        <div class="point"><b>✔ What is the idea?</b> A central CCTV monitoring and alert center.</div>
+        <div class="point"><b>✔ How it helps?</b> Quick crime detection, emergency support.</div>
+        <div class="point"><b>✔ Implementation:</b> Install cameras → Send to center → AI detect → Notify police.</div>
+        <div class="point"><b>✔ Algorithms:</b> Searching, Pattern recognition, Object detection, Clustering.</div>
+    </div>
+</div>
+
+<!-- 3. Online Food & Grocery Delivery -->
+<div class="idea-box" onclick="toggle('delivery')">
+    <div class="title">3. Online Food & Grocery Delivery Service</div>
+    <div class="details" id="delivery">
+        <div class="point"><b>✔ What is the idea?</b> An app to deliver food & groceries fast.</div>
+        <div class="point"><b>✔ How it helps?</b> Saves time, convenience.</div>
+        <div class="point"><b>✔ Implementation:</b> Build app → connect shops → assign delivery → tracking.</div>
+        <div class="point"><b>✔ Algorithms:</b> Dijkstra, Sorting, Recommendation, Searching.</div>
+    </div>
+</div>
+
+<!-- 4. Smart Parking System -->
+<div class="idea-box" onclick="toggle('parking')">
+    <div class="title">4. Smart Parking System</div>
+    <div class="details" id="parking">
+        <div class="point"><b>✔ What is the idea?</b> App + sensors to show free parking slots.</div>
+        <div class="point"><b>✔ How it helps?</b> Saves time, avoids traffic.</div>
+        <div class="point"><b>✔ Implementation:</b> Install sensors → detect status → app shows slots.</div>
+        <div class="point"><b>✔ Algorithms:</b> Searching, Graph, Prediction, Dynamic programming.</div>
+    </div>
+</div>
+
+<!-- 5. Skill Development Center -->
+<div class="idea-box" onclick="toggle('skill')">
+    <div class="title">5. Skill Development & Vocational Training Center</div>
+    <div class="details" id="skill">
+        <div class="point"><b>✔ What is the idea?</b> A center to teach technical and job skills.</div>
+        <div class="point"><b>✔ How it helps?</b> Jobs, income growth, rural development.</div>
+        <div class="point"><b>✔ Implementation:</b> Choose courses → classrooms → training → certification.</div>
+        <div class="point"><b>✔ Algorithms:</b> Recommendation, Classification, Sorting, Sequencing.</div>
+    </div>
+</div>
+
+<!-- 6. Smart Public Transport System -->
+<div class="idea-box" onclick="toggle('transport')">
+    <div class="title">6. Smart Public Transport System</div>
+    <div class="details" id="transport">
+        <div class="point"><b>✔ What is the idea?</b> Real-time bus timings & best routes system.</div>
+        <div class="point"><b>✔ How it helps?</b> Saves time, avoids crowded buses.</div>
+        <div class="point"><b>✔ Implementation:</b> GPS → app shows location → predict arrival.</div>
+        <div class="point"><b>✔ Algorithms:</b> Dijkstra, Graph, Scheduling, Prediction.</div>
+    </div>
+</div>
+
+<script>
+function toggle(id) {
+    let box = document.getElementById(id);
+    box.style.display = (box.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
