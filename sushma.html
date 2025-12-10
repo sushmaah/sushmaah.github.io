@@ -300,177 +300,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>City Project – Ideas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Ideas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f1f5ff;
-        padding: 20px;
-    }
+        header {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-    h1 {
-        text-align: center;
-        color: #1d2b53;
-    }
+        header a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            background: #ff7e5f;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
 
-    .container {
-        max-width: 900px;
-        margin: auto;
-    }
+        header a:hover {
+            background: #feb47b;
+        }
 
-    .idea-box {
-        background: white;
-        border-radius: 10px;
-        border: 2px solid #b8c7ff;
-        padding: 15px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 20px;
+        }
 
-    .idea-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-    }
+        .idea-box {
+            padding: 25px;
+            font-size: 1.2rem;
+            color: white;
+            font-weight: bold;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
 
-    .idea-title {
-        font-size: 18px;
-        font-weight: bold;
-        color: #102040;
-    }
+        .idea-box:hover {
+            transform: translateY(-5px);
+        }
 
-    .idea-buttons button {
-        padding: 6px 12px;
-        font-size: 13px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        margin-left: 6px;
-    }
-
-    .edit-btn { background: #2d6cdf; color: white; }
-    .save-btn { background: #27b35f; color: white; display: none; }
-    .img-btn { background: #ffb300; color: white; }
-
-    .content-view {
-        white-space: pre-wrap;
-        background: #f8f9ff;
-        padding: 10px;
-        border-radius: 8px;
-        min-height: 50px;
-        font-size: 15px;
-    }
-
-    textarea {
-        width: 100%;
-        padding: 10px;
-        font-size: 15px;
-        border-radius: 8px;
-        border: 1px solid #b8c7ff;
-        display: none;
-        overflow: hidden;
-        resize: none;
-    }
-
-    .image-area img {
-        width: 100%;
-        margin-top: 10px;
-        border-radius: 8px;
-    }
-</style>
+        .idea1 { background: #FF6B6B; }
+        .idea2 { background: #6BCB77; }
+        .idea3 { background: #4D96FF; }
+        .idea4 { background: #FFD93D; color: #333; }
+        .idea5 { background: #FF6AD5; }
+        .idea6 { background: #FFA500; }
+    </style>
 </head>
-
 <body>
 
-<h1>City Project – Smart Ideas</h1>
+    <header>
+        <a href="index.html">← Back to Home</a>
+    </header>
 
-<div class="container" id="ideaContainer"></div>
-
-<script>
-const ideas = [
-    "Solar Energy Power Hub",
-    "Public Safety & CCTV Monitoring Center",
-    "Online Food & Grocery Delivery Service",
-    "Smart Parking System",
-    "Skill Development & Vocational Training Center",
-    "Smart Public Transport System"
-];
-
-const container = document.getElementById("ideaContainer");
-
-// Auto-expand function
-function autoExpand(textarea) {
-    textarea.style.height = "auto";
-    textarea.style.height = textarea.scrollHeight + "px";
-}
-
-ideas.forEach((title, index) => {
-    const box = document.createElement("div");
-    box.className = "idea-box";
-
-    box.innerHTML = `
-        <div class="idea-header">
-            <div class="idea-title">${index + 1}. ${title}</div>
-            <div class="idea-buttons">
-                <button class="edit-btn">Edit</button>
-                <button class="save-btn">Save</button>
-                <button class="img-btn">Add Image</button>
-                <input type="file" accept="image/*" style="display:none;">
-            </div>
-        </div>
-
-        <div class="content-view">Write about "${title}" here...</div>
-        <textarea></textarea>
-        <div class="image-area"></div>
-    `;
-
-    const editBtn = box.querySelector(".edit-btn");
-    const saveBtn = box.querySelector(".save-btn");
-    const imgBtn = box.querySelector(".img-btn");
-    const fileInput = box.querySelector("input[type=file]");
-    const contentView = box.querySelector(".content-view");
-    const textarea = box.querySelector("textarea");
-    const imageArea = box.querySelector(".image-area");
-
-    editBtn.onclick = () => {
-        textarea.value = contentView.textContent;
-        textarea.style.display = "block";
-        contentView.style.display = "none";
-        editBtn.style.display = "none";
-        saveBtn.style.display = "inline-block";
-        autoExpand(textarea);
-    };
-
-    textarea.addEventListener("input", () => autoExpand(textarea));
-
-    saveBtn.onclick = () => {
-        contentView.textContent = textarea.value;
-        textarea.style.display = "none";
-        contentView.style.display = "block";
-        saveBtn.style.display = "none";
-        editBtn.style.display = "inline-block";
-    };
-
-    imgBtn.onclick = () => fileInput.click();
-
-    fileInput.onchange = () => {
-        const file = fileInput.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = e => {
-            imageArea.innerHTML = `<img src="${e.target.result}">`;
-        };
-        reader.readAsDataURL(file);
-    };
-
-    container.appendChild(box);
-});
-</script>
+    <div class="container">
+        <div class="idea-box idea1">1. Solar Energy Power Hub</div>
+        <div class="idea-box idea2">2. Public Safety & CCTV Monitoring Center</div>
+        <div class="idea-box idea3">3. Online Food & Grocery Delivery Service</div>
+        <div class="idea-box idea4">4. Smart Parking System</div>
+        <div class="idea-box idea5">5. Skill Development & Vocational Training Center</div>
+        <div class="idea-box idea6">6. Smart Public Transport System</div>
+    </div>
 
 </body>
 </html>
