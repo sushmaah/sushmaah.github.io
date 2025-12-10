@@ -286,184 +286,190 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Business Ideas – Edit, Save & Add Image</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>City Project – Ideas</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6fa;
-            padding: 20px;
-        }
-        .box {
-            background: white;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-        }
-        .idea-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 12px;
-            color: #333;
-        }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f1f5ff;
+        padding: 20px;
+    }
 
-        .edit-btn, .save-btn, .img-btn {
-            padding: 8px 14px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 8px;
-            margin-right: 8px;
-            font-size: 14px;
-        }
-        .edit-btn { background: #007bff; color: white; }
-        .save-btn { background: #28a745; color: white; display: none; }
-        .img-btn { background: #6c757d; color: white; }
+    h1 {
+        text-align: center;
+        color: #1d2b53;
+    }
 
-        /* 🚀 AUTO EXPANDING BOX STYLE */
-        textarea {
-            width: 100%;
-            min-height: 110px;
-            font-size: 15px;
-            padding: 8px;
-            display: none;
-            margin-top: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            overflow: hidden; 
-            resize: none; 
-        }
+    .container {
+        max-width: 900px;
+        margin: auto;
+    }
 
-        img {
-            max-width: 100%;
-            margin-top: 15px;
-            border-radius: 6px;
-            display: block;
-        }
-        input[type="file"] {
-            display: none;
-        }
-    </style>
+    .idea-box {
+        background: white;
+        border-radius: 10px;
+        border: 2px solid #b8c7ff;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .idea-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .idea-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #102040;
+    }
+
+    .idea-buttons button {
+        padding: 6px 12px;
+        font-size: 13px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-left: 6px;
+    }
+
+    .edit-btn { background: #2d6cdf; color: white; }
+    .save-btn { background: #27b35f; color: white; display: none; }
+    .img-btn { background: #ffb300; color: white; }
+
+    .content-view {
+        white-space: pre-wrap;
+        background: #f8f9ff;
+        padding: 10px;
+        border-radius: 8px;
+        min-height: 50px;
+        font-size: 15px;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        border-radius: 8px;
+        border: 1px solid #b8c7ff;
+        display: none;
+        overflow: hidden;
+        resize: none;
+    }
+
+    .image-area img {
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+</style>
 </head>
+
 <body>
 
-<h1>Business Ideas — Editable + Image</h1>
-<div id="idea-container"></div>
+<h1>City Project – Smart Ideas</h1>
+
+<div class="container" id="ideaContainer"></div>
 
 <script>
-    const ideas = [
-        "1. Solar Energy Power Hub",
-        "2. Public Safety & CCTV Monitoring Center",
-        "3. Online Food & Grocery Delivery Service",
-        "4. Smart Parking System",
-        "5. Skill Development & Vocational Training Center",
-        "6. Smart Public Transport System"
-    ];
+const ideas = [
+    "Solar Energy Power Hub",
+    "Public Safety & CCTV Monitoring Center",
+    "Online Food & Grocery Delivery Service",
+    "Smart Parking System",
+    "Skill Development & Vocational Training Center",
+    "Smart Public Transport System"
+];
 
-    const container = document.getElementById("idea-container");
+const container = document.getElementById("ideaContainer");
 
-    ideas.forEach((title, index) => {
-        const id = "idea" + index;
-        container.innerHTML += `
-            <div class="box" id="${id}-box">
-                <div class="idea-title">${title}</div>
-                
-                <p id="${id}-text"></p>
+// Auto-expand function
+function autoExpand(textarea) {
+    textarea.style.height = "auto";
+    textarea.style.height = textarea.scrollHeight + "px";
+}
 
-                <!-- 🚀 AUTO EXPANDING TEXTAREA -->
-                <textarea id="${id}-edit" oninput="autoExpand(this)"></textarea>
+ideas.forEach((title, index) => {
+    const box = document.createElement("div");
+    box.className = "idea-box";
 
-                <button class="edit-btn" id="${id}-edit-btn" onclick="editIdea('${id}')">Edit</button>
-                <button class="save-btn" id="${id}-save-btn" onclick="saveIdea('${id}')">Save</button>
-
-                <button class="img-btn" onclick="triggerFile('${id}')">Add / Change Image</button>
-                <input type="file" accept="image/*" id="${id}-fileinput">
-
-                <div id="${id}-img-container"></div>
+    box.innerHTML = `
+        <div class="idea-header">
+            <div class="idea-title">${index + 1}. ${title}</div>
+            <div class="idea-buttons">
+                <button class="edit-btn">Edit</button>
+                <button class="save-btn">Save</button>
+                <button class="img-btn">Add Image</button>
+                <input type="file" accept="image/*" style="display:none;">
             </div>
-        `;
-    });
+        </div>
 
-    // Load saved text & images
-    ideas.forEach((_, index) => {
-        const id = "idea" + index;
-        const savedText = localStorage.getItem(id + "-text");
-        if (savedText) {
-            document.getElementById(id + "-text").innerText = savedText;
-        } else {
-            document.getElementById(id + "-text").innerText = "Write explanation here...";
-        }
+        <div class="content-view">Write about "${title}" here...</div>
+        <textarea></textarea>
+        <div class="image-area"></div>
+    `;
 
-        const imgData = localStorage.getItem(id + "-img");
-        if (imgData) {
-            displayImage(id, imgData);
-        }
-    });
+    const editBtn = box.querySelector(".edit-btn");
+    const saveBtn = box.querySelector(".save-btn");
+    const imgBtn = box.querySelector(".img-btn");
+    const fileInput = box.querySelector("input[type=file]");
+    const contentView = box.querySelector(".content-view");
+    const textarea = box.querySelector("textarea");
+    const imageArea = box.querySelector(".image-area");
 
-    function editIdea(id) {
-        const textP = document.getElementById(id + "-text");
-        const editArea = document.getElementById(id + "-edit");
-        editArea.value = textP.innerText;
+    editBtn.onclick = () => {
+        textarea.value = contentView.textContent;
+        textarea.style.display = "block";
+        contentView.style.display = "none";
+        editBtn.style.display = "none";
+        saveBtn.style.display = "inline-block";
+        autoExpand(textarea);
+    };
 
-        textP.style.display = "none";
-        editArea.style.display = "block";
+    textarea.addEventListener("input", () => autoExpand(textarea));
 
-        autoExpand(editArea);
+    saveBtn.onclick = () => {
+        contentView.textContent = textarea.value;
+        textarea.style.display = "none";
+        contentView.style.display = "block";
+        saveBtn.style.display = "none";
+        editBtn.style.display = "inline-block";
+    };
 
-        document.getElementById(id + "-edit-btn").style.display = "none";
-        document.getElementById(id + "-save-btn").style.display = "inline-block";
-    }
+    imgBtn.onclick = () => fileInput.click();
 
-    function saveIdea(id) {
-        const editArea = document.getElementById(id + "-edit");
-        const textP = document.getElementById(id + "-text");
-        const newText = editArea.value;
+    fileInput.onchange = () => {
+        const file = fileInput.files[0];
+        if (!file) return;
 
-        textP.innerText = newText;
-        localStorage.setItem(id + "-text", newText);
+        const reader = new FileReader();
+        reader.onload = e => {
+            imageArea.innerHTML = `<img src="${e.target.result}">`;
+        };
+        reader.readAsDataURL(file);
+    };
 
-        textP.style.display = "block";
-        editArea.style.display = "none";
-
-        document.getElementById(id + "-save-btn").style.display = "none";
-        document.getElementById(id + "-edit-btn").style.display = "inline-block";
-    }
-
-    function triggerFile(id) {
-        document.getElementById(id + "-fileinput").click();
-    }
-
-    function displayImage(id, dataUrl) {
-        const imgC = document.getElementById(id + "-img-container");
-        imgC.innerHTML = `<img src="${dataUrl}" alt="Idea Image">`;
-    }
-
-    // Handle image upload + save
-    ideas.forEach((_, index) => {
-        const id = "idea" + index;
-        document.getElementById(id + "-fileinput").addEventListener("change", function(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const dataUrl = e.target.result;
-                localStorage.setItem(id + "-img", dataUrl);
-                displayImage(id, dataUrl);
-            };
-            reader.readAsDataURL(file);
-        });
-    });
-
-    /* 🚀 AUTO EXPANDING FUNCTION */
-    function autoExpand(field) {
-        field.style.height = "auto";
-        field.style.height = (field.scrollHeight) + "px";
-    }
+    container.appendChild(box);
+});
 </script>
 
 </body>
