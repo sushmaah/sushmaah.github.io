@@ -99,7 +99,7 @@ th {
 
 <div class="idea-box">
     <h3>Sushma H</h3>
-    <textarea oninput="autoExpand(this)" placeholder="Write here..."></textarea>
+    <textarea oninput="autoExpand(this)" placeholder="Write here..." ></textarea>
 </div>
 
 <style>
@@ -128,12 +128,13 @@ textarea {
     padding: 10px;
     border-radius: 8px;
     background: #f0f0ff;
+    overflow: hidden;  /* ⭐ prevents scrolling */
 }
 </style>
 
 <script>
 function autoExpand(element) {
-    element.style.height = "auto";
-    element.style.height = element.scrollHeight + "px";
+    element.style.height = "auto";              // reset height
+    element.style.height = element.scrollHeight + "px";  // expand to fit all content
 }
 </script>
