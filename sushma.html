@@ -38,341 +38,278 @@
 
 
 
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Business Ideas</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
-      padding: 20px;
-      scroll-behavior: smooth;
-    }
+<meta charset="utf-8">
+<title>Business Ideas</title>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  scroll-behavior: smooth;
+}
 
-    h1 {
-      text-align: center;
-      color: #222;
-      font-size: 36px;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 3px #aaa;
-    }
+h1 {
+  text-align: center;
+  color: #222;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
 
-    /* Back to Home Button */
-    #backHome {
-      display: inline-block;
-      background: linear-gradient(135deg, #ff6a88, #ffb88c);
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-bottom: 30px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+/* Back to Home link styled as a button */
+#backHome {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6a88, #ffb88c);
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+#backHome:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
 
-    #backHome:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-    }
+.idea-box {
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.idea-box:hover {
+  transform: scale(1.03) rotate(1deg);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+}
 
-    .idea-box {
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 15px;
-      cursor: pointer;
-      color: #fff;
-      font-weight: bold;
-      font-size: 20px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+.explanation {
+  display: none;
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border-left: 8px solid;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+.explanation.show {
+  display: block;
+  max-height: 2000px;
+}
 
-    .idea-box:hover {
-      transform: scale(1.03) rotate(1deg);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.25);
-    }
+/* Gradients */
+#idea1 { background: linear-gradient(135deg, #ff6a88, #ffb88c); } #exp1 { border-left-color: #ff6a88; }
+#idea2 { background: linear-gradient(135deg, #36d1dc, #5b86e5); } #exp2 { border-left-color: #36d1dc; }
+#idea3 { background: linear-gradient(135deg, #f7971e, #ffd200); } #exp3 { border-left-color: #f7971e; }
+#idea4 { background: linear-gradient(135deg, #00c6ff, #0072ff); } #exp4 { border-left-color: #00c6ff; }
+#idea5 { background: linear-gradient(135deg, #43e97b, #38f9d7); } #exp5 { border-left-color: #43e97b; }
+#idea6 { background: linear-gradient(135deg, #ff9a9e, #fecfef); } #exp6 { border-left-color: #ff9a9e; }
 
-    .explanation {
-      display: none;
-      background: #fff;
-      color: #333;
-      padding: 20px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      border-left: 8px solid;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      line-height: 1.6;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.5s ease;
-    }
-
-    .explanation.show {
-      display: block;
-      max-height: 2000px;
-    }
-
-    /* Unique gradients for idea boxes and border colors for explanations */
-    #idea1 { background: linear-gradient(135deg, #ff6a88, #ffb88c); }
-    #exp1 { border-left-color: #ff6a88; }
-
-    #idea2 { background: linear-gradient(135deg, #36d1dc, #5b86e5); }
-    #exp2 { border-left-color: #36d1dc; }
-
-    #idea3 { background: linear-gradient(135deg, #f7971e, #ffd200); }
-    #exp3 { border-left-color: #f7971e; }
-
-    #idea4 { background: linear-gradient(135deg, #00c6ff, #0072ff); }
-    #exp4 { border-left-color: #00c6ff; }
-
-    #idea5 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
-    #exp5 { border-left-color: #43e97b; }
-
-    #idea6 { background: linear-gradient(135deg, #ff9a9e, #fecfef); }
-    #exp6 { border-left-color: #ff9a9e; }
-
-    ul, ol {
-      margin-top: 5px;
-      margin-left: 20px;
-    }
-
-    strong {
-      display: block;
-      margin-top: 10px;
-      font-size: 18px;
-      color: #444;
-    }
-
-  </style>
+ul, ol { margin-top: 5px; margin-left: 20px; }
+strong { display: block; margin-top: 10px; font-size: 18px; color: #444; }
+</style>
 </head>
 <body>
 
-  <a href="#top" id="backHome">⬆ Back to Home</a>
+<!-- Back to Home link -->
+<a href="#top" id="backHome">⬆ Back to Home</a>
 
-  <h1 id="top">Business Ideas</h1>
+<h1 id="top">Business Ideas</h1>
 
-  <!-- Idea 1 -->
-  <div class="idea-box" id="idea1" onclick="toggleExplanation('exp1')">
-    1. Solar Energy Power Hub
-  </div>
-  <div class="explanation" id="exp1">
-    <strong>✔ What is the idea?</strong>
-    A central solar power station that collects sunlight and supplies electricity to nearby homes and businesses.
+<!-- Idea 1 -->
+<div class="idea-box" id="idea1" onclick="toggleExplanation('exp1')">1. Solar Energy Power Hub</div>
+<div class="explanation" id="exp1">
+  <strong>✔ What is the idea?</strong> A central solar power station that collects sunlight and supplies electricity to nearby homes and businesses.
+  <strong>✔ How it helps people?</strong>
+  <ul>
+    <li>Reduces electricity bills</li>
+    <li>Provides clean and renewable energy</li>
+    <li>Reduces power cuts</li>
+    <li>Helps rural areas get stable power</li>
+  </ul>
+  <strong>✔ How to implement it?</strong>
+  <ol>
+    <li>Identify high-sunlight areas</li>
+    <li>Install solar panels</li>
+    <li>Connect panels to battery storage</li>
+    <li>Supply power to homes</li>
+    <li>Monitor energy using IoT sensors</li>
+  </ol>
+  <strong>✔ Suitable algorithms used:</strong>
+  <ul>
+    <li>Sorting Algorithm: Identify best locations by sunlight intensity</li>
+    <li>Graph Algorithm: Map power distribution connections</li>
+    <li>Prediction Algorithm: Forecast energy production</li>
+    <li>Optimization Algorithm: Maximize power output with fewer panels</li>
+  </ul>
+</div>
 
-    <strong>✔ How it helps people?</strong>
-    <ul>
-      <li>Reduces electricity bills</li>
-      <li>Provides clean and renewable energy</li>
-      <li>Reduces power cuts</li>
-      <li>Helps rural areas get stable power</li>
-    </ul>
+<!-- Idea 2 -->
+<div class="idea-box" id="idea2" onclick="toggleExplanation('exp2')">2. Public Safety & CCTV Monitoring Center</div>
+<div class="explanation" id="exp2">
+  <strong>✔ What is the idea?</strong> A city control room that monitors CCTV cameras live to ensure public safety.
+  <strong>✔ How it helps people?</strong>
+  <ul>
+    <li>Quick detection of crimes</li>
+    <li>Faster emergency response</li>
+    <li>Traffic management</li>
+    <li>Helps police trace suspects</li>
+  </ul>
+  <strong>✔ How to implement it?</strong>
+  <ol>
+    <li>Install CCTV cameras across the city</li>
+    <li>Send all footage to a central center</li>
+    <li>Use AI to detect suspicious behavior</li>
+    <li>Generate automatic alerts to police</li>
+  </ol>
+  <strong>✔ Suitable algorithms used:</strong>
+  <ul>
+    <li>Searching Algorithms: Find a specific person/vehicle in video</li>
+    <li>Pattern Recognition: Identify unusual activity</li>
+    <li>Object Detection Algorithms: Detect faces, vehicles, bags</li>
+    <li>Clustering Algorithms: Group crowd movement patterns</li>
+  </ul>
+</div>
 
-    <strong>✔ How to implement it?</strong>
-    <ol>
-      <li>Identify high-sunlight areas</li>
-      <li>Install solar panels</li>
-      <li>Connect panels to battery storage</li>
-      <li>Supply power to homes</li>
-      <li>Monitor energy using IoT sensors</li>
-    </ol>
+<!-- Idea 3 -->
+<div class="idea-box" id="idea3" onclick="toggleExplanation('exp3')">3. Online Food & Grocery Delivery Service</div>
+<div class="explanation" id="exp3">
+  <strong>✔ What is the idea?</strong> A mobile app that delivers food and groceries to customers quickly.
+  <strong>✔ How it helps people?</strong>
+  <ul>
+    <li>Saves time</li>
+    <li>Home delivery convenience</li>
+    <li>Fresh groceries on demand</li>
+    <li>Good for elderly and busy professionals</li>
+  </ul>
+  <strong>✔ How to implement it?</strong>
+  <ol>
+    <li>Build a food + grocery app</li>
+    <li>Connect shops and restaurants</li>
+    <li>Assign delivery partners</li>
+    <li>Track delivery in real time</li>
+    <li>Handle online payments</li>
+  </ol>
+  <strong>✔ Suitable algorithms used:</strong>
+  <ul>
+    <li>Shortest Path Algorithm (Dijkstra): Find fastest route for delivery</li>
+    <li>Sorting Algorithm: Sort restaurants by rating or distance</li>
+    <li>Recommendation Algorithm: Suggest items to customers</li>
+    <li>Searching Algorithm: Find items quickly in inventory</li>
+  </ul>
+</div>
 
-    <strong>✔ Suitable algorithms used:</strong>
-    <ul>
-      <li>Sorting Algorithm: Identify best locations by sunlight intensity</li>
-      <li>Graph Algorithm: Map power distribution connections</li>
-      <li>Prediction Algorithm: Forecast energy production</li>
-      <li>Optimization Algorithm: Maximize power output with fewer panels</li>
-    </ul>
-  </div>
+<!-- Idea 4 -->
+<div class="idea-box" id="idea4" onclick="toggleExplanation('exp4')">4. Smart Parking System</div>
+<div class="explanation" id="exp4">
+  <strong>✔ What is the idea?</strong> An app + sensor system that shows real-time available parking spaces in the city.
+  <strong>✔ How it helps people?</strong>
+  <ul>
+    <li>Reduces time spent searching for parking</li>
+    <li>Controls traffic</li>
+    <li>Saves fuel</li>
+    <li>Reduces vehicle congestion</li>
+  </ul>
+  <strong>✔ How to implement it?</strong>
+  <ol>
+    <li>Install sensors in each parking slot</li>
+    <li>Sensors detect empty/filled slots</li>
+    <li>Data sent to the app</li>
+    <li>App shows nearest free slot</li>
+    <li>User books the slot</li>
+  </ol>
+  <strong>✔ Suitable algorithms used:</strong>
+  <ul>
+    <li>Searching Algorithm: Find nearest parking space</li>
+    <li>Graph Algorithm: Show best road to parking</li>
+    <li>Prediction Algorithm: Predict peak hours</li>
+    <li>Dynamic Programming: Optimize parking usage</li>
+  </ul>
+</div>
 
-  <!-- Idea 2 -->
-  <div class="idea-box" id="idea2" onclick="toggleExplanation('exp2')">
-    2. Public Safety & CCTV Monitoring Center
-  </div>
-  <div class="explanation" id="exp2">
-    <strong>✔ What is the idea?</strong>
-    A city control room that monitors CCTV cameras live to ensure public safety.
+<!-- Idea 5 -->
+<div class="idea-box" id="idea5" onclick="toggleExplanation('exp5')">5. Skill Development & Vocational Training Center</div>
+<div class="explanation" id="exp5">
+  <strong>✔ What is the idea?</strong> A training center where people learn skills like computer basics, tailoring, electrician courses, digital marketing, etc.
+  <strong>✔ How it helps people?</strong>
+  <ul>
+    <li>Helps unemployed youth get jobs</li>
+    <li>Improves skill level</li>
+    <li>Increases income</li>
+    <li>Supports rural development</li>
+  </ul>
+  <strong>✔ How to implement it?</strong>
+  <ol>
+    <li>Identify required courses</li>
+    <li>Build training classrooms</li>
+    <li>Provide hands-on practical training</li>
+    <li>Conduct assessments and certification</li>
+  </ol>
+  <strong>✔ Suitable algorithms used:</strong>
+  <ul>
+    <li>Recommendation Algorithm: Suggest suitable courses to students</li>
+    <li>Classification Algorithm: Group people by skill level</li>
+    <li>Sorting Algorithm: Rank courses based on demand</li>
+    <li>Sequencing Algorithm: Create learning path step-by-step</li>
+  </ul>
+</div>
 
-    <strong>✔ How it helps people?</strong>
-    <ul>
-      <li>Quick detection of crimes</li>
-      <li>Faster emergency response</li>
-      <li>Traffic management</li>
-      <li>Helps police trace suspects</li>
-    </ul>
+<!-- Idea 6 -->
+<div class="idea-box" id="idea6" onclick="toggleExplanation('exp6')">6. Smart Public Transport System</div>
+<div class="explanation" id="exp6">
+  <strong>✔ What is the idea?</strong> A digital system that shows real-time bus timings, best routes, and crowd levels.
+  <strong>✔ How it helps people?</strong>
+  <ul>
+    <li>Saves time</li>
+    <li>Reduces waiting at bus stops</li>
+    <li>Avoids crowded buses</li>
+    <li>Helps plan travel easily</li>
+  </ul>
+  <strong>✔ How to implement it?</strong>
+  <ol>
+    <li>GPS installed on all buses</li>
+    <li>App shows bus location</li>
+    <li>Predict arrival time</li>
+    <li>Suggest fastest route</li>
+    <li>Show seat availability</li>
+  </ol>
+  <strong>✔ Suitable algorithms used:</strong>
+  <ul>
+    <li>Shortest Path (Dijkstra): Find quickest travel route</li>
+    <li>Graph Algorithms: Represent city map</li>
+    <li>Scheduling Algorithms: Optimize bus timings</li>
+    <li>Prediction Algorithms: Estimate bus arrival and traffic</li>
+  </ul>
+</div>
 
-    <strong>✔ How to implement it?</strong>
-    <ol>
-      <li>Install CCTV cameras across the city</li>
-      <li>Send all footage to a central center</li>
-      <li>Use AI to detect suspicious behavior</li>
-      <li>Generate automatic alerts to police</li>
-    </ol>
-
-    <strong>✔ Suitable algorithms used:</strong>
-    <ul>
-      <li>Searching Algorithms: Find a specific person/vehicle in video</li>
-      <li>Pattern Recognition: Identify unusual activity</li>
-      <li>Object Detection Algorithms: Detect faces, vehicles, bags</li>
-      <li>Clustering Algorithms: Group crowd movement patterns</li>
-    </ul>
-  </div>
-
-  <!-- Idea 3 -->
-  <div class="idea-box" id="idea3" onclick="toggleExplanation('exp3')">
-    3. Online Food & Grocery Delivery Service
-  </div>
-  <div class="explanation" id="exp3">
-    <strong>✔ What is the idea?</strong>
-    A mobile app that delivers food and groceries to customers quickly.
-
-    <strong>✔ How it helps people?</strong>
-    <ul>
-      <li>Saves time</li>
-      <li>Home delivery convenience</li>
-      <li>Fresh groceries on demand</li>
-      <li>Good for elderly and busy professionals</li>
-    </ul>
-
-    <strong>✔ How to implement it?</strong>
-    <ol>
-      <li>Build a food + grocery app</li>
-      <li>Connect shops and restaurants</li>
-      <li>Assign delivery partners</li>
-      <li>Track delivery in real time</li>
-      <li>Handle online payments</li>
-    </ol>
-
-    <strong>✔ Suitable algorithms used:</strong>
-    <ul>
-      <li>Shortest Path Algorithm (Dijkstra): Find fastest route for delivery</li>
-      <li>Sorting Algorithm: Sort restaurants by rating or distance</li>
-      <li>Recommendation Algorithm: Suggest items to customers</li>
-      <li>Searching Algorithm: Find items quickly in inventory</li>
-    </ul>
-  </div>
-
-  <!-- Idea 4 -->
-  <div class="idea-box" id="idea4" onclick="toggleExplanation('exp4')">
-    4. Smart Parking System
-  </div>
-  <div class="explanation" id="exp4">
-    <strong>✔ What is the idea?</strong>
-    An app + sensor system that shows real-time available parking spaces in the city.
-
-    <strong>✔ How it helps people?</strong>
-    <ul>
-      <li>Reduces time spent searching for parking</li>
-      <li>Controls traffic</li>
-      <li>Saves fuel</li>
-      <li>Reduces vehicle congestion</li>
-    </ul>
-
-    <strong>✔ How to implement it?</strong>
-    <ol>
-      <li>Install sensors in each parking slot</li>
-      <li>Sensors detect empty/filled slots</li>
-      <li>Data sent to the app</li>
-      <li>App shows nearest free slot</li>
-      <li>User books the slot</li>
-    </ol>
-
-    <strong>✔ Suitable algorithms used:</strong>
-    <ul>
-      <li>Searching Algorithm: Find nearest parking space</li>
-      <li>Graph Algorithm: Show the best road to the parking area</li>
-      <li>Prediction Algorithm: Predict peak hours</li>
-      <li>Dynamic Programming: Optimize parking space usage</li>
-    </ul>
-  </div>
-
-  <!-- Idea 5 -->
-  <div class="idea-box" id="idea5" onclick="toggleExplanation('exp5')">
-    5. Skill Development & Vocational Training Center
-  </div>
-  <div class="explanation" id="exp5">
-    <strong>✔ What is the idea?</strong>
-    A training center where people learn skills like computer basics, tailoring, electrician courses, digital marketing, etc.
-
-    <strong>✔ How it helps people?</strong>
-    <ul>
-      <li>Helps unemployed youth get jobs</li>
-      <li>Improves skill level</li>
-      <li>Increases income</li>
-      <li>Supports rural development</li>
-    </ul>
-
-    <strong>✔ How to implement it?</strong>
-    <ol>
-      <li>Identify required courses</li>
-      <li>Build training classrooms</li>
-      <li>Provide hands-on practical training</li>
-      <li>Conduct assessments and certification</li>
-    </ol>
-
-    <strong>✔ Suitable algorithms used:</strong>
-    <ul>
-      <li>Recommendation Algorithm: Suggest suitable courses to students</li>
-      <li>Classification Algorithm: Group people by skill level</li>
-      <li>Sorting Algorithm: Rank courses based on demand</li>
-      <li>Sequencing Algorithm: Create learning path step-by-step</li>
-    </ul>
-  </div>
-
-  <!-- Idea 6 -->
-  <div class="idea-box" id="idea6" onclick="toggleExplanation('exp6')">
-    6. Smart Public Transport System
-  </div>
-  <div class="explanation" id="exp6">
-    <strong>✔ What is the idea?</strong>
-    A digital system that shows real-time bus timings, best routes, and crowd levels.
-
-    <strong>✔ How it helps people?</strong>
-    <ul>
-      <li>Saves time</li>
-      <li>Reduces waiting at bus stops</li>
-      <li>Avoids crowded buses</li>
-      <li>Helps plan travel easily</li>
-    </ul>
-
-    <strong>✔ How to implement it?</strong>
-    <ol>
-      <li>GPS installed on all buses</li>
-      <li>App shows bus location</li>
-      <li>Predict arrival time</li>
-      <li>Suggest fastest route</li>
-      <li>Show seat availability</li>
-    </ol>
-
-    <strong>✔ Suitable algorithms used:</strong>
-    <ul>
-      <li>Shortest Path (Dijkstra): Find quickest travel route</li>
-      <li>Graph Algorithms: Represent city map</li>
-      <li>Scheduling Algorithms: Optimize bus timings</li>
-      <li>Prediction Algorithms: Estimate bus arrival and traffic</li>
-    </ul>
-  </div>
-
-  <script>
-    function toggleExplanation(id) {
-      const allExps = document.querySelectorAll('.explanation');
-      allExps.forEach(exp => {
-        if(exp.id === id){
-          exp.classList.toggle('show');
-        } else {
-          exp.classList.remove('show');
-        }
-      });
-    }
-  </script>
+<script>
+function toggleExplanation(id){
+  const allExps = document.querySelectorAll('.explanation');
+  allExps.forEach(exp => {
+    if(exp.id === id){ exp.classList.toggle('show'); } 
+    else { exp.classList.remove('show'); }
+  });
+}
+</script>
 
 </body>
-  </html>
-
-    
+</html>  
+   
 
 
 
