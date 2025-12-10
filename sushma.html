@@ -536,3 +536,137 @@ function toggle(id) {
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Business Ideas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 20px;
+        }
+
+        .idea-box {
+            background: white;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .idea-box:hover {
+            background: #e8f3ff;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .content {
+            margin-top: 10px;
+            display: none;       /* Hides explanation */
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = (content.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Business Ideas</h2>
+
+<div class="idea-box" onclick="toggleContent('idea1')">
+    <div class="title">1. Solar Energy Power Hub</div>
+    <div class="content" id="idea1">
+        ✔ A solar power station that supplies clean electricity.<br>
+        ✔ Helps reduce electricity bills.<br>
+        ✔ Useful for homes & businesses.<br>
+    </div>
+</div>
+
+<div class="idea-box" onclick="toggleContent('idea2')">
+    <div class="title">2. Public Safety & CCTV Monitoring Center</div>
+    <div class="content" id="idea2">
+        ✔ A center to monitor public CCTV cameras.<br>
+        ✔ Helps improve safety and reduce crime.<br>
+    </div>
+</div>
+
+<div class="idea-box" onclick="toggleContent('idea3')">
+    <div class="title">3. Online Food & Grocery Delivery Service</div>
+    <div class="content" id="idea3">
+        ✔ A delivery system for food and groceries.<br>
+        ✔ Makes people’s daily shopping easy.<br>
+    </div>
+</div>
+
+<div class="idea-box" onclick="toggleContent('idea4')">
+    <div class="title">4. Smart Parking System</div>
+    <div class="content" id="idea4">
+        ✔ Real-time parking availability.<br>
+        ✔ Reduces traffic and time waste.<br>
+    </div>
+</div>
+
+<div class="idea-box" onclick="toggleContent('idea5')">
+    <div class="title">5. Skill Development & Vocational Training Center</div>
+    <div class="content" id="idea5">
+        ✔ Teaches important job skills.<br>
+        ✔ Helps youth get employment.<br>
+    </div>
+</div>
+
+<div class="idea-box" onclick="toggleContent('idea6')">
+    <div class="title">6. Smart Public Transport System</div>
+    <div class="content" id="idea6">
+        ✔ Real-time bus tracking.<br>
+        ✔ Improves travel comfort & time management.<br>
+    </div>
+</div>
+
+</body>
+</html>
