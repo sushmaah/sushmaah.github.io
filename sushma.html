@@ -42,28 +42,28 @@
     
 
     
+  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Business Ideas</title>
-
 <style>
 html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #eef3f8;
+  background: #f0f4f8;
+  scroll-behavior: smooth;
 }
 
 h1 {
   text-align: center;
   color: #222;
-  font-size: 34px;
-  padding: 20px 0;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-/* Colorful Idea Boxes */
 .idea-box {
   padding: 20px;
   margin: 15px;
@@ -73,52 +73,50 @@ h1 {
   font-weight: bold;
   font-size: 20px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
 .idea-box:hover {
-  transform: scale(1.04);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  transform: scale(1.03) rotate(1deg);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
 }
 
-/* Explanations */
 .explanation {
-  max-height: 0;
-  overflow: hidden;
+  display: none;
   background: #fff;
   color: #333;
-  margin: 10px 15px;
-  border-radius: 15px;
-  padding: 0 20px;
-  border-left: 8px solid;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: max-height 0.5s ease, padding 0.3s ease;
-}
-
-.explanation.show {
-  max-height: 2000px;
   padding: 20px;
+  border-radius: 15px;
+  margin: 10px 15px 25px 15px;
+  border-left: 8px solid;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+.explanation.show {
+  display: block;
+  max-height: 2000px;
 }
 
-/* Color accents for each idea */
+/* Colors */
 #idea1 { background: linear-gradient(135deg, #ff6a88, #ffb88c); }
-#exp1  { border-left-color: #ff6a88; }
+#exp1 { border-left-color: #ff6a88; }
 
 #idea2 { background: linear-gradient(135deg, #36d1dc, #5b86e5); }
-#exp2  { border-left-color: #36d1dc; }
+#exp2 { border-left-color: #36d1dc; }
 
 #idea3 { background: linear-gradient(135deg, #f7971e, #ffd200); }
-#exp3  { border-left-color: #f7971e; }
+#exp3 { border-left-color: #f7971e; }
 
 #idea4 { background: linear-gradient(135deg, #00c6ff, #0072ff); }
-#exp4  { border-left-color: #00c6ff; }
+#exp4 { border-left-color: #00c6ff; }
 
 #idea5 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
-#exp5  { border-left-color: #43e97b; }
+#exp5 { border-left-color: #43e97b; }
 
 #idea6 { background: linear-gradient(135deg, #ff9a9e, #fecfef); }
-#exp6  { border-left-color: #ff9a9e; }
-
+#exp6 { border-left-color: #ff9a9e; }
 </style>
 </head>
 
@@ -127,153 +125,59 @@ h1 {
 <h1>Business Ideas</h1>
 
 <!-- Idea 1 -->
-<div class="idea-box" id="idea1" onclick="toggleExplanation('exp1')">
-  1. Solar Energy Power Hub
-</div>
+<div class="idea-box" id="idea1" onclick="toggleExplanation('exp1')">1. Solar Energy Power Hub</div>
 <div class="explanation" id="exp1">
   <strong>✔ What is the idea?</strong>
-  A central solar power station that collects sunlight and supplies electricity to homes.
-
-  <strong>✔ How it helps people?</strong>
-  <ul>
-    <li>Reduces electricity bills</li>
-    <li>Provides clean energy</li>
-    <li>Reduces power cuts</li>
-    <li>Supports rural areas</li>
-  </ul>
-
-  <strong>✔ How to implement it?</strong>
-  <ol>
-    <li>Find high sunlight area</li>
-    <li>Install solar panels</li>
-    <li>Connect to battery storage</li>
-    <li>Supply power to houses</li>
-    <li>Monitor using IoT</li>
-  </ol>
-
-  <strong>✔ Suitable algorithms:</strong>
-  <ul>
-    <li>Sorting Algorithm</li>
-    <li>Graph Algorithm</li>
-    <li>Prediction Algorithm</li>
-    <li>Optimization Algorithm</li>
-  </ul>
+  A central solar power station that collects sunlight and supplies electricity.
 </div>
 
 <!-- Idea 2 -->
-<div class="idea-box" id="idea2" onclick="toggleExplanation('exp2')">
-  2. Public Safety & CCTV Monitoring Center
-</div>
+<div class="idea-box" id="idea2" onclick="toggleExplanation('exp2')">2. Public Safety & CCTV Monitoring Center</div>
 <div class="explanation" id="exp2">
   <strong>✔ What is the idea?</strong>
-  A city control room to monitor CCTV live for safety.
-
-  <strong>✔ How it helps people?</strong>
-  <ul>
-    <li>Detect crimes faster</li>
-    <li>Quick emergency response</li>
-    <li>Manages traffic</li>
-    <li>Tracks suspects</li>
-  </ul>
-
-  <strong>✔ Suitable algorithms:</strong>
-  <ul>
-    <li>Searching</li>
-    <li>Pattern Recognition</li>
-    <li>Object Detection</li>
-    <li>Clustering</li>
-  </ul>
+  A control room that monitors CCTV cameras for public safety.
 </div>
 
 <!-- Idea 3 -->
-<div class="idea-box" id="idea3" onclick="toggleExplanation('exp3')">
-  3. Online Food & Grocery Delivery
-</div>
+<div class="idea-box" id="idea3" onclick="toggleExplanation('exp3')">3. Online Food & Grocery Delivery Service</div>
 <div class="explanation" id="exp3">
   <strong>✔ What is the idea?</strong>
-  A mobile app for fast food + grocery delivery.
-
-  <strong>✔ How it helps people?</strong>
-  <ul>
-    <li>Saves time</li>
-    <li>Home delivery comfort</li>
-    <li>Fresh groceries anytime</li>
-    <li>Useful for elderly</li>
-  </ul>
-
-  <strong>✔ Suitable algorithms:</strong>
-  <ul>
-    <li>Dijkstra Shortest Path</li>
-    <li>Sorting</li>
-    <li>Recommendation</li>
-    <li>Searching</li>
-  </ul>
+  A mobile app that delivers food and groceries.
 </div>
 
 <!-- Idea 4 -->
-<div class="idea-box" id="idea4" onclick="toggleExplanation('exp4')">
-  4. Smart Parking System
-</div>
+<div class="idea-box" id="idea4" onclick="toggleExplanation('exp4')">4. Smart Parking System</div>
 <div class="explanation" id="exp4">
   <strong>✔ What is the idea?</strong>
-  A sensor + app system showing real-time free parking slots.
-
-  <strong>✔ Suitable algorithms:</strong>
-  <ul>
-    <li>Searching</li>
-    <li>Graph</li>
-    <li>Prediction</li>
-    <li>Dynamic Programming</li>
-  </ul>
+  An app + sensor system showing real-time parking availability.
 </div>
 
 <!-- Idea 5 -->
-<div class="idea-box" id="idea5" onclick="toggleExplanation('exp5')">
-  5. Skill Development & Vocational Training Center
-</div>
+<div class="idea-box" id="idea5" onclick="toggleExplanation('exp5')">5. Skill Development & Vocational Training Center</div>
 <div class="explanation" id="exp5">
   <strong>✔ What is the idea?</strong>
-  A center for training youth in jobs & skills.
-
-  <strong>✔ Suitable algorithms:</strong>
-  <ul>
-    <li>Recommendation</li>
-    <li>Classification</li>
-    <li>Sorting</li>
-    <li>Sequencing</li>
-  </ul>
+  A center teaching computer skills, tailoring, electrician training, etc.
 </div>
 
 <!-- Idea 6 -->
-<div class="idea-box" id="idea6" onclick="toggleExplanation('exp6')">
-  6. Smart Public Transport System
-</div>
+<div class="idea-box" id="idea6" onclick="toggleExplanation('exp6')">6. Smart Public Transport System</div>
 <div class="explanation" id="exp6">
   <strong>✔ What is the idea?</strong>
-  Real-time bus tracking + best route guide.
-
-  <strong>✔ Suitable algorithms:</strong>
-  <ul>
-    <li>Dijkstra</li>
-    <li>Graph</li>
-    <li>Scheduling</li>
-    <li>Prediction</li>
-  </ul>
+  Real-time bus timing and traffic-based route suggestions.
 </div>
 
 <script>
 function toggleExplanation(id){
-  const exp = document.getElementById(id);
-  exp.classList.toggle("show");
+  const allExps = document.querySelectorAll('.explanation');
+  allExps.forEach(exp => {
+    if(exp.id === id){
+      exp.classList.toggle('show');
+    } else {
+      exp.classList.remove('show');
+    }
+  });
 }
 </script>
 
 </body>
 </html>
-
-
-
-          
-
-      
-
