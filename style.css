@@ -102,7 +102,23 @@ th {
     transform: translateX(-4px);
     box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
+.back-home-btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #333;
+    background: #d4d4ff; /* light purple to match theme */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
 
+.back-home-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
 
 
 
