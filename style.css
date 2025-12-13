@@ -194,3 +194,22 @@ th {
 
 
 
+
+
+
+/* City Chart Image Styling */
+.chart-title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.chart-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.chart-container img {
+    max-width: 95%;
+    height: auto;
+    border-radius: 8px;
+    }
