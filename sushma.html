@@ -78,6 +78,22 @@ img {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional shadow for style */
 }
 /* =================================================================== */
+    .back-home-container {
+  text-align: center; /* center the link */
+  margin: 20px 0;    /* spacing from content */
+}
+
+.back-home-link {
+  text-decoration: none;
+  color: #1a73e8;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.back-home-link:hover {
+  color: #0b4ca3; /* darker blue on hover */
+}
     body {
       font-family: Arial, sans-serif;
       background: #f4f6fa;
@@ -374,7 +390,10 @@ img {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
-
+  <!-- Back to Home Link -->
+<div class="back-home-container">
+  <a href="index.html" class="back-home-link">Back to Home</a>
+</div>
 </body>
 </html>
 
